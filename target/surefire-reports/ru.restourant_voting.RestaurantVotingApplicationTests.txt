@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: ru.restourant_voting.RestaurantVotingApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.622 s <<< FAILURE! - in ru.restourant_voting.RestaurantVotingApplicationTests
+contextLoads  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'h2Server' defined in class path resource [ru/restourant_voting/config/AppConfig.class]: Invocation of init method failed; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: Ошибка при открытии порта "9092" (порт может уже использоваться), причина: "java.net.BindException: Address already in use: bind"
+Exception opening port "9092" (port may be in use), cause: "java.net.BindException: Address already in use: bind" [90061-214]
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: 
+Ошибка при открытии порта "9092" (порт может уже использоваться), причина: "java.net.BindException: Address already in use: bind"
+Exception opening port "9092" (port may be in use), cause: "java.net.BindException: Address already in use: bind" [90061-214]
+Caused by: java.net.BindException: Address already in use: bind
+
