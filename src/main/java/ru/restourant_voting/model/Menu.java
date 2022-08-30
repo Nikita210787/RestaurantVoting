@@ -1,4 +1,6 @@
 package ru.restourant_voting.model;
+
+//import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,11 +25,11 @@ import java.util.List;
 })
 @NoArgsConstructor
 @AllArgsConstructor
-public class Menu extends AbstractPersistable<Integer> {
+public class Menu extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "restaurant_id", nullable = false, updatable = false)
     @NotNull
-   // @Schema(hidden = true)
+    // @Schema(hidden = true)
     private Restaurant restaurant;
 
     @Column(nullable = false)

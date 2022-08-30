@@ -1,8 +1,15 @@
 package ru.restourant_voting.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+//import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -18,7 +25,7 @@ import java.util.List;
 @Table(name = "restaurant")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Restaurant extends AbstractPersistable<Integer> {
+public class Restaurant extends BaseEntity {
 
     @Length(min = 2, max = 128)
     @NotBlank
@@ -27,9 +34,22 @@ public class Restaurant extends AbstractPersistable<Integer> {
 
     @NotNull
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    //  @JsonManagedReference
+    //  @OnDelete(action = OnDeleteAction.CASCADE)
+    //  @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    // @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private List<Menu> menus = new ArrayList<>();
 
+
+    // @OnDelete(action = OnDeleteAction.CASCADE)
+    //@JsonIgnore
+    //@Schema(hidden = true)    //требует зависимости
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @NotNull
     private List<Vote> votes = new ArrayList<>();
+
+  /*  public Restaurant addMenusAndGetInstance(List<Menu> menus) {
+        this.menus = menus;
+        return this;
+    }*/
 }
