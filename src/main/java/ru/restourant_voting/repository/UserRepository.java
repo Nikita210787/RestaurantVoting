@@ -11,13 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-@Transactional(readOnly = true)
 public interface UserRepository extends JpaRepository<User, Integer> {
+    //TODO
 
-  /* @RestResource(rel = "by-id", path = "by-email")
-    @Query("SELECT u FROM User u")
-    Optional<User> findByEmailIgnoreCase(String email);
-
-   @RestResource(rel = "by-lastname", path = "by-lastname")
-    List<User> findByLastNameContainingIgnoreCase(String lastName);*/
 }

@@ -1,11 +1,14 @@
 package ru.restourant_voting.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+//import com.fasterxml.jackson.annotation.JsonProperty;
+//import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+//import ru.restourant_voting.util.JsonDeserializers;
 //import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -31,6 +34,8 @@ public class User extends BaseEntity implements Serializable {
 
     @Column(nullable = false)
     @NotBlank
+            // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+   // @JsonDeserialize(using = JsonDeserializers.asswordDeserializer.class)
     private String password;
 
     @Enumerated(EnumType.STRING)

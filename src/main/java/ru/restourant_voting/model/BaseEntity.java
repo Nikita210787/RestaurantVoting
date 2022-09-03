@@ -16,13 +16,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BaseEntity implements Persistable<Integer>{
+
+    //doesn't work for hibernate lazy proxy
     @ToString.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
   //  @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     protected Integer id;
-
     public int id() {
         Assert.notNull(id, "Entity must have id");
         return id;

@@ -26,10 +26,26 @@ spring:
     #    tcp: jdbc:h2:tcp://localhost:9092/~/voting
     username: sa
     password:
-   # h2.console.enabled: true
+    # h2.console.enabled: true
 
   #  https://docs.spring.io/spring-data/rest/docs/current/reference/html/#getting-started.basic-settings
   data:
     rest:
       base-path: api/
       return-body-on-create: true
+
+  security:
+    user:
+      name: user
+      password: password
+      roles: USER
+
+logging:
+  level:
+    root: warn
+    #ru.restaurant_voting: warn
+      # org.springframework.security.web.FilterChainProxy: debug
+
+      # Jackson Serialization Issue Resolver
+#  jackson:
+#    visibility.field: any

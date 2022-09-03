@@ -1,8 +1,8 @@
 INSERT INTO USERS (NAME, LOGIN, PASSWORD)
-VALUES ('User', 'user', 'userPassword'),
-       ('Petr', 'PetrLogin', 'userPassword'),
-       ('Vasia', 'VasiaLogin', 'userPassword'),
-       ('Admin', 'admin', 'adminPassword');
+VALUES ('User', 'user', '{noop}userPassword'),
+       ('Petr', 'PetrLogin', '{noop}userPassword'),
+       ('Vasia', 'VasiaLogin', '{noop}userPassword'),
+       ('Admin', 'admin', '{noop}adminPassword');
 
 INSERT INTO USER_ROLES (USER_ID, ROLE)
 VALUES (1, 'USER'),
