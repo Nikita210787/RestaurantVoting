@@ -9,7 +9,7 @@ VALUES (1, 'USER'),
        (3, 'USER'),
        (4, 'USER'),
        (2, 'USER'),
-       (2, 'ADMIN');
+       (4, 'ADMIN');
 
 INSERT INTO RESTAURANT (TITLE)
 VALUES ('Shaurma_na_Kazanskom'),
