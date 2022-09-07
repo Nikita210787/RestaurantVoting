@@ -33,8 +33,9 @@ public class WebSecurityConfig {
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/api/account/**").authenticated()
-                .antMatchers("/api/**").hasRole(Role.ADMIN.name())
+                .antMatchers("/api/register").anonymous()
+                .antMatchers("/api/**").authenticated()                     //https://stackoverflow.com/questions/35890540/when-to-use-spring-securitys-antmatcher
+                .antMatchers("/api/admin/**").hasRole(Role.ADMIN.name())    //recommendations for the project "api/admin/**").hasRole(Role.ADMIN.name())"
                 .and().httpBasic()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().csrf().disable();

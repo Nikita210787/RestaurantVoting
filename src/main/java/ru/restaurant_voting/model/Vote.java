@@ -40,4 +40,8 @@ public class Vote extends BaseEntity {
     private Date date = Date.valueOf(LocalDate.now());
 
 
+ /*   @JsonGetter
+    private RestaurantWithoutMenus getRestaurant() {
+        return new RestaurantWithoutMenus(restaurant.id(), restaurant.getName());
+    }*/
 }
