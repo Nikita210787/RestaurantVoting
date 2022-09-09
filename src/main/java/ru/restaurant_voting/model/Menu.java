@@ -1,11 +1,11 @@
 package ru.restaurant_voting.model;
 
-//import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ru.restaurant_voting.converter.MealsConverter;
+import org.springframework.context.annotation.Bean;
+import ru.restaurant_voting.converter.MealsDBConverter;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -28,16 +28,17 @@ public class Menu extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "restaurant_id", nullable = false, updatable = false)
     @NotNull
-    // @Schema(hidden = true)
+    //@Schema(hidden = true)
     private Restaurant restaurant;
 
     @Column(nullable = false)
     @NotNull
     private LocalDate date;
 
+
     @Size(min = 1, max = 20)
     @NotNull
-    @Convert(converter = MealsConverter.class)
+    @Convert(converter = MealsDBConverter.class)
     @Valid
     private List<Meal> meals = new ArrayList<>();
 

@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web;
+package ru.restaurant_voting.web.forUserControllers;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +12,7 @@ import ru.restaurant_voting.model.Role;
 import ru.restaurant_voting.model.User;
 import ru.restaurant_voting.repository.UserRepository;
 import ru.restaurant_voting.util.ValidationUtil;
+import ru.restaurant_voting.web.AuthUser;
 
 import javax.validation.Valid;
 import java.net.URI;
@@ -26,7 +27,7 @@ public class AccountController {
     private final UserRepository userRepository;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public User get(@AuthenticationPrincipal AuthUser authUser) {
+    public User get(@AuthenticationPrincipal AuthUser authUser) {//AuthUser-User-BaseEntity
         log.info("get {}", authUser);
         return authUser.getUser();
     }
@@ -35,7 +36,8 @@ public class AccountController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@AuthenticationPrincipal AuthUser authUser) {
         log.info("delete {}", authUser);
-        userRepository.deleteById(authUser.id());
+        userRepository.deleteById(authUser.id());   //Interface: CrudRepository-PagingAndSortingRepository-JpaRepository
+
     }
 
     @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -44,7 +46,7 @@ public class AccountController {
         log.info("register {}", user);
         ValidationUtil.checkNew(user);
         user.setRoles(Set.of(Role.USER));
-        user = userRepository.save(user);
+        user = (User) userRepository.save(user);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/api/account")
                 .build().toUri();

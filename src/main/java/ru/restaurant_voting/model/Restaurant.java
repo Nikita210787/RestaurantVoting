@@ -42,8 +42,4 @@ public class Restaurant extends BaseEntity {
     @NotNull
     private List<Vote> votes = new ArrayList<>();
 
-  /*  public Restaurant addMenusAndGetInstance(List<Menu> menus) {
-        this.menus = menus;
-        return this;
-    }*/
 }

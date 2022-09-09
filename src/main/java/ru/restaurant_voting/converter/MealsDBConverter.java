@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Converter
-public class MealsConverter implements AttributeConverter<List<Meal>, String> {
+public class MealsDBConverter implements AttributeConverter<List<Meal>, String> {
 
     private static final String PROPS_SEPARATOR = "\t";
     private static final String meals_SEPARATOR = "\t\t";

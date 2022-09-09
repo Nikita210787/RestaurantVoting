@@ -2,14 +2,19 @@ INSERT INTO USERS (NAME, LOGIN, PASSWORD)
 VALUES ('User', 'user', '{noop}userPassword'),
        ('Petr', 'PetrLogin', '{noop}userPassword'),
        ('Vasia', 'VasiaLogin', '{noop}userPassword'),
-       ('Admin', 'admin', '{noop}adminPassword');
+       ('Admin', 'admin', '{noop}adminPassword'),
+       ('User1', '1', '{noop}1'),
+       ('User2', '2', '{noop}2');
 
 INSERT INTO USER_ROLES (USER_ID, ROLE)
 VALUES (1, 'USER'),
        (3, 'USER'),
        (4, 'USER'),
        (2, 'USER'),
-       (4, 'ADMIN');
+       (4, 'ADMIN'),
+       (5, 'USER'),
+       (6, 'USER'),
+       (6, 'ADMIN');
 
 INSERT INTO RESTAURANT (TITLE)
 VALUES ('Shaurma_na_Kazanskom'),
