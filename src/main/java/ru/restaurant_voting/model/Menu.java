@@ -1,5 +1,7 @@
 package ru.restaurant_voting.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,7 +27,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Menu extends BaseEntity {
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JsonBackReference ////  (@JsonIgnore и @JsonManagedReference, @JsonBackReference) for not avaliable "infinity recursion" https://overcoder.net/q/309597/%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-jsonignore-%D0%B8-jsonbackreference-jsonmanagedreference
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "restaurant_id", nullable = false, updatable = false)
     @NotNull
     //@Schema(hidden = true)

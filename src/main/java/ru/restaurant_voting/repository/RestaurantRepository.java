@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface RestaurantRepository<T> extends BaseEntityRepository<Restaurant> {
     /**
-     * return all Restaurant with today menu. For admin.
+     * return all Restaurant with today menu. used in VoteService
      */
     //SQL Query : @Query("SELECT * FROM Restaurant r JOIN menu m WHERE m.date = CURRENT_DATE")
     @Query("SELECT r FROM Restaurant r JOIN FETCH r.menus m WHERE m.date = CURRENT_DATE")

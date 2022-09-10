@@ -1,7 +1,8 @@
 package ru.restaurant_voting.util;
 
+import lombok.experimental.UtilityClass;
 import ru.restaurant_voting.model.BaseEntity;
-
+@UtilityClass
 public class ValidationUtil {
 
     public static void checkNew(BaseEntity entity) {

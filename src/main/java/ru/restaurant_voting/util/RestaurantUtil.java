@@ -17,6 +17,7 @@ public class RestaurantUtil {
                         r.id(),
                         r.getTitle(),
                         r.getMenus().stream().findAny().orElseThrow()))
-                .collect(Collectors./*<RestaurantTodayMenu>*/toList());
+                .collect(Collectors.toList());
     }
 }
+
