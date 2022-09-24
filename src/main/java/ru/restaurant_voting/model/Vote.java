@@ -39,8 +39,4 @@ public class Vote extends BaseEntity {
         this.restaurant = restaurant;
     }
 
- /*   @JsonGetter
-    private RestaurantWithoutMenus getRestaurant() {
-        return new RestaurantWithoutMenus(restaurant.id(), restaurant.getName());
-    }*/
 }

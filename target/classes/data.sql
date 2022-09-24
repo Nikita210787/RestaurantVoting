@@ -18,12 +18,14 @@ VALUES (1, 'USER'),
 
 INSERT INTO RESTAURANT (TITLE)
 VALUES ('Shaurma_na_Kazanskom'),
-       ('Shaurma_na_Leningradskom'),
-       ('Shaurma_na_Yaroslavskom'),
+       ('Shaurma_na_Leningradskom1'),
+       ('Shaurma_na_Leningradskom2'),
+       ('Shaurma_na_Yaroslavskom1'),
+       ('Shaurma_na_Yaroslavskom2'),
        ('U_Ashota');
 
 INSERT INTO MENU (RESTAURANT_ID, DATE, MEALS)
-VALUES (1, '2022-08-23', 'eggs    85    apple    70    cracker    22        juice    40'),
+VALUES (1, '2022-08-23', 'eggs    85        apple    70        cracker    22        juice    40'),
        (1, '2022-08-26', 'dish5    340        meall08266    660        meall08267    760        meall08268    530'),
        (1, CURRENT_DATE, 'mealToDay    75        meallToDay    330        meallToDay    45'),
        (2, '2022-08-25', 'meal08_25    48        meal08_25    780        meal08_25    88        meall08_254    740'),

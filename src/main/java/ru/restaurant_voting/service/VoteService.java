@@ -23,24 +23,20 @@ public class VoteService {
 
     RestaurantRepository restaurantRepository;
 
+    /**
+     * checks whether the user can vote naw
+     **/
     public Vote voteForRestaurant(int restaurantId, User user) {
-        Restaurant restaurantToVote = null;
-        try {
-            restaurantToVote = (Restaurant) restaurantRepository.findById(restaurantId).orElseThrow(
-                    () -> new EntityNotFoundException("Restaurant with such id not present"));
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+        Restaurant restaurantToVote = restaurantRepository.findById(restaurantId).orElseThrow(
+                () -> new EntityNotFoundException("Restaurant with such id not present")
+        );
 
-        Optional<Vote> usersVotingToday = voteRepository.getUserVotedToday(user);
-        if (usersVotingToday.isPresent() && LocalTime.now().isAfter(DEADLINE_FOR_VOTE)) {
-            log.info("Vote after deadline - user:{}", user.id());
+        Optional<Vote> todayVoteForUser = voteRepository.getTodayVoteForUser(user);
+        if (todayVoteForUser.isPresent() && LocalTime.now().isAfter(DEADLINE_FOR_VOTE)) {
+            log.info("User want change self voice after deadline - user:{}", user.id());
             throw new RuntimeException("You cannot voting after 11:00 p.m.");
         }
-        Vote voteToSave = usersVotingToday.orElse(new Vote(user, restaurantToVote));
-        if (!usersVotingToday.get().isNew())
-            voteToSave.setRestaurant(restaurantToVote);
-
-        return (Vote) voteRepository.save(voteToSave);
+        Vote voteToSave = todayVoteForUser.orElse(new Vote(user, restaurantToVote));
+        return voteRepository.save(voteToSave);
     }
 }

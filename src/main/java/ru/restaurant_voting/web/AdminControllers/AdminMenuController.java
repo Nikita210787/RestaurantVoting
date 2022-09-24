@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.forAdminControllers;
+package ru.restaurant_voting.web.AdminControllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -12,4 +12,13 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Menu Controller (for Admin)")
-public class AdminMenuController {}
+public class AdminMenuController {
+
+    //TODO
+    //Add menu for resstaurant
+    //delete menu by id
+    //delete menu by id/restaurant
+    //delete all menu for restaurant by idRestaraunt
+    //update menu by restaurant
+    //update menu by id
+}

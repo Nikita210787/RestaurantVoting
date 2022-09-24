@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.forUserControllers;
+package ru.restaurant_voting.web.UserControllers;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.restaurant_voting.model.Restaurant;
 import ru.restaurant_voting.repository.RestaurantRepository;
 import ru.restaurant_voting.util.RestaurantUtil;
-import ru.restaurant_voting.dto.RestaurantTodayMenu;
+import ru.restaurant_voting.dto.RestaurantIncludeMenu;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "api/restaurants", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "api/user/restaurants", produces = MediaType.APPLICATION_JSON_VALUE)
 @Slf4j
 @AllArgsConstructor
-public class RestaurantForUserController {
+public class UserRestaurantController {
 
     RestaurantRepository restaurantRepository;
 
@@ -25,9 +25,9 @@ public class RestaurantForUserController {
      * @return All Restaurants with menu for today
      */
     @GetMapping("/today")
-    List<RestaurantTodayMenu> getRestaurantTodayMenu() {
+    List<RestaurantIncludeMenu> getRestaurantTodayMenu() {
         log.info("getAllRestaurantTodayMenu. RestaurantForUserControllerJob");
-        return RestaurantUtil.getTOsTodayMenu(restaurantRepository.getAllRestaurantWithTodayMenu());
+        return RestaurantUtil.getTOsIncludeMenu(restaurantRepository.getAllRestaurantWithTodayMenu());
     }
 
 }

@@ -8,7 +8,7 @@ import javax.validation.constraints.PositiveOrZero;
 @Getter
 @AllArgsConstructor
 public class Meal {
-   //@Pattern(regexp = "^[^\\t]*$", message = "The title cannot contain a tab character")
+
     @Length(min = 2, max = 128)
     private String title;
 

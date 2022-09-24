@@ -5,16 +5,21 @@ import org.springframework.stereotype.Repository;
 import ru.restaurant_voting.model.User;
 import ru.restaurant_voting.model.Vote;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface VoteRepository<T> extends BaseEntityRepository<Vote> {
+public interface VoteRepository extends BaseEntityRepository<Vote> {
     /**
-     * return User who voting today .It usd in VoteServis
+     * return Vote for user voted today .And it used in VoteService
      **/
     @Query("SELECT v FROM Vote v WHERE v.user = :user AND v.date = CURRENT_DATE")
-    Optional<Vote> getUserVotedToday(User user);
+    Optional<Vote> getTodayVoteForUser(User user);
+
+    /**
+     * return Vote on that date for all Users
+     **/
     @Query("SELECT v FROM Vote v WHERE v.date = CURRENT_DATE ")
-    List<Vote> getAllUsersVotedToday(User user);
+    List<Vote> getTAllTodayVote(User user);
 }

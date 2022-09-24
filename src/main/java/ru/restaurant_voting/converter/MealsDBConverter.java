@@ -10,8 +10,8 @@ import java.util.List;
 @Converter
 public class MealsDBConverter implements AttributeConverter<List<Meal>, String> {
 
-    private static final String PROPS_SEPARATOR = "\t";
-    private static final String meals_SEPARATOR = "\t\t";
+    private static final String PROPS_SEPARATOR = "    ";
+    private static final String meals_SEPARATOR = "        ";
 
     @Override
     public String convertToDatabaseColumn(@Valid List<Meal> MealList) {
