@@ -21,7 +21,7 @@ public interface RestaurantRepository extends BaseEntityRepository<Restaurant> {
      */
     @Query("SELECT r FROM Restaurant r JOIN FETCH r.menus")
     List<Restaurant> getWithMenusallREstaurant();
-    /**
+        /**
      * return all Restaurant with menu by ID.
      */
     @Query("SELECT r FROM Restaurant r JOIN FETCH r.menus m WHERE r.id = :restaurantId")
@@ -29,4 +29,5 @@ public interface RestaurantRepository extends BaseEntityRepository<Restaurant> {
 
     @Query("SELECT r FROM Restaurant r WHERE r.id = :id")
     Optional<Restaurant> getByID(int id);
+    Optional<Restaurant> getRestaurantById(int id);
 }

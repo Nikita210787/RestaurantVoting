@@ -42,7 +42,7 @@ public class Restaurant extends BaseEntity {
 
 
     @OnDelete(action = OnDeleteAction.CASCADE)
-    //@Schema(hidden = true)    //требует зависимости
+    //@Schema(hidden = true)
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @NotNull

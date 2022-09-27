@@ -8,9 +8,7 @@ import java.util.List;
 
 @Repository
 public interface MenuRepository extends BaseEntityRepository<Menu> {
-    /**
-     * @return menu for restaurant by id restaurant
-     **/
+
     List<Menu> getMenuByRestaurantIdAndDate(int restaurantId, LocalDate localDate);
 
     /**

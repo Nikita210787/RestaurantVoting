@@ -20,12 +20,8 @@ public class VoteService {
     public static final LocalTime DEADLINE_FOR_VOTE = LocalTime.of(11, 0);
 
     VoteRepository voteRepository;
-
     RestaurantRepository restaurantRepository;
 
-    /**
-     * checks whether the user can vote naw
-     **/
     public Vote voteForRestaurant(int restaurantId, User user) {
         Restaurant restaurantToVote = restaurantRepository.findById(restaurantId).orElseThrow(
                 () -> new EntityNotFoundException("Restaurant with such id not present")

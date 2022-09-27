@@ -39,12 +39,8 @@ public class AdminAccountController {
     @GetMapping(value = "/{id}")
     public User getbyId(@PathVariable int id) {
         log.info("Admin request User by id:{}", id);
-        try {
             return  userRepository.findById(id).orElseThrow(
                     () -> new EntityNotFoundException("There is no restaurant with such id"));
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
     }
 
     /**

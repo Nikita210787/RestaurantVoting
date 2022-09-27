@@ -118,4 +118,53 @@ Content-Type: application/json
 {
 "title" : "teesf23412st"
 }
-##
+
+    #######################
+    ##AdminMenuController##
+    #######################
+
+###
+GET http://localhost:8080/menus/api/admin/restaurant/3
+###
+GET http://localhost:8080/menus/api/admin/today
+Authorization: Basic 2 2
+###
+POST http://localhost:8080/api/admin/menus/add/4
+Authorization: Basic 2 2
+Content-Type: application/json
+
+{
+"date": "2022-09-28",
+"meals": [
+{
+"title": "mea445345oDay",
+"price": 74
+},
+{
+"title": "me345al4545ToDay",
+"price": 34
+}
+]
+}
+
+###
+PUT http://localhost:8080/api/admin/menus/update/menu_1/restaurant_1
+Authorization: Basic 2 2
+Content-Type: application/json
+
+{
+"meals": [
+{
+"title": "mea445345oDay",
+"price": 74
+},
+{
+"title": "me345al4545ToDay",
+"price": 34
+}
+]
+}
+###
+DELETE http://localhost:8080/api/admin/menus/deleteallmenu/1
+Authorization: Basic 2 2
+############################################################################################

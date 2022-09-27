@@ -22,6 +22,9 @@ VALUES ('Shaurma_na_Kazanskom'),
        ('Shaurma_na_Leningradskom2'),
        ('Shaurma_na_Yaroslavskom1'),
        ('Shaurma_na_Yaroslavskom2'),
+       ('Shaurma_na_Yaroslavskom3'),
+       ('Shaurma_na_Yaroslavskom4'),
+       ('Shaurma_na_Yaroslavskom5'),
        ('U_Ashota');
 
 INSERT INTO MENU (RESTAURANT_ID, DATE, MEALS)

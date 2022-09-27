@@ -22,4 +22,5 @@ public interface VoteRepository extends BaseEntityRepository<Vote> {
      **/
     @Query("SELECT v FROM Vote v WHERE v.date = CURRENT_DATE ")
     List<Vote> getTAllTodayVote(User user);
+
 }

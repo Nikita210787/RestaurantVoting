@@ -2,6 +2,7 @@ package ru.restaurant_voting.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,17 +22,16 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "menu", uniqueConstraints = {
-        @UniqueConstraint(name = "menus_unique_restaurant_date_idx",
-                columnNames = {"restaurant_id", "date"})
+        @UniqueConstraint(name = "one_menu_for_day", columnNames = {"restaurant_id", "date"})
 })
 @NoArgsConstructor
 @AllArgsConstructor
 public class Menu extends BaseEntity {
     @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "restaurant_id", nullable = false, updatable = false)
+    @JoinColumn(name = "restaurant_id", nullable = false/*, updatable = false*/)
     @NotNull
-    //@Schema(hidden = true)
+    @Schema(hidden = true)
     private Restaurant restaurant;
 
     @Column(nullable = false)

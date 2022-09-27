@@ -1,4 +1,5 @@
 package ru.restaurant_voting.model;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
@@ -13,8 +14,8 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "vote"/*, uniqueConstraints = {
-        @UniqueConstraint(name = "votes_unique_user_date_idx", columnNames = {"user_id", "date"})*/)
+@Table(name = "vote", uniqueConstraints = {
+        @UniqueConstraint(name = "one_votes_in_day", columnNames = {"user_id", "date"})})
 
 @NoArgsConstructor
 public class Vote extends BaseEntity {
