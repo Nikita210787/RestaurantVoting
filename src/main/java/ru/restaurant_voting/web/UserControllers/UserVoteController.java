@@ -25,7 +25,7 @@ public class UserVoteController {
     /**
      * @return vote authorized user for today
      */
-    @GetMapping(value = "/current", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping( produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<Vote> getTodayVoteForUser(@AuthenticationPrincipal AuthUser authUser) {
         log.info("getUserVoteForToday - user:{}", authUser.id());
         return ResponseEntity.of(voteRepository.getTodayVoteForUser(authUser.getUser()));

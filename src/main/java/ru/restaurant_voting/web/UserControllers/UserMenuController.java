@@ -16,7 +16,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "api/user/menu")
+@RequestMapping(value = "api/user/menus")
 @AllArgsConstructor
 public class UserMenuController {
 

@@ -27,7 +27,7 @@ public class AdminAccountController {
     /**
      * @return authorized admin
      */
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/profile",  produces = MediaType.APPLICATION_JSON_VALUE)
     public User getAccount(@AuthenticationPrincipal AuthUser authUser) {
         log.info("get {}", authUser);
         return authUser.getUser();
@@ -46,7 +46,7 @@ public class AdminAccountController {
     /**
      * delete any user by id
      */
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int id) {
         log.info("delete any user # {}", id);
@@ -68,7 +68,7 @@ public class AdminAccountController {
     /**
      * update any user by id.
      */
-    @PutMapping(value = "/update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@Valid @RequestBody User user, @PathVariable int id) {
         log.info("update user id {}", id);

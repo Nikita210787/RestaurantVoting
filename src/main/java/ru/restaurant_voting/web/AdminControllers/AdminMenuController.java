@@ -3,29 +3,26 @@ package ru.restaurant_voting.web.AdminControllers;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import ru.restaurant_voting.dto.RestaurantIncludeMenu;
 import ru.restaurant_voting.model.Menu;
 import ru.restaurant_voting.model.Restaurant;
 import ru.restaurant_voting.repository.MenuRepository;
 import ru.restaurant_voting.repository.RestaurantRepository;
 import ru.restaurant_voting.service.MenuServis;
 import ru.restaurant_voting.util.MenuUtil;
-import ru.restaurant_voting.util.RestaurantUtil;
 import ru.restaurant_voting.util.ValidationUtil;
 
 import javax.persistence.EntityNotFoundException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import static ru.restaurant_voting.util.MenuUtil.*;
+import static ru.restaurant_voting.util.MenuUtil.checkDate;
+import static ru.restaurant_voting.util.MenuUtil.checkMenubyId;
 import static ru.restaurant_voting.util.RestaurantUtil.checkExistRestaurantById;
 
 @RestController
@@ -59,7 +56,7 @@ public class AdminMenuController {
     /**
      * add Menu to restaurant
      */
-    @PostMapping(value = "/add/{restaurantId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/restaurant/{restaurantId}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<Menu> create(@PathVariable int restaurantId, @RequestBody Menu menu) {
         checkDate(menu);
@@ -72,7 +69,7 @@ public class AdminMenuController {
     /**
      * @return update menu by id in restaurant by id
      */
-    @PutMapping(value = "/update/menu_{menuId}/restaurant_{restaurantId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/{menuId}/restaurant/{restaurantId}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @Transactional
     ResponseEntity<Menu> update(@PathVariable int menuId, @RequestBody Menu menu, @PathVariable int restaurantId) {
         checkMenubyId(menu, menuId);
@@ -80,7 +77,7 @@ public class AdminMenuController {
         checkExistRestaurantById(restaurantRepository, restaurantId);
         menu.setRestaurant(restaurantRepository.getRestaurantById(restaurantId).get());
         menuServis.checkBeforUpdate(menu);
-        log.info("updated {} for Restaurant:{}", menu,restaurantId);
+        log.info("updated {} for Restaurant:{}", menu, restaurantId);
         Menu menuAfterUpdate = menuRepository.save(menu);
         return ResponseEntity.ok(menuAfterUpdate);
     }
@@ -88,7 +85,7 @@ public class AdminMenuController {
     /**
      * delete any menu by id
      */
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int id) {
         log.info("delete any menu # {}", id);
@@ -98,7 +95,7 @@ public class AdminMenuController {
     /**
      * delete all menu by id restaurant
      */
-    @DeleteMapping("/deleteallmenu/{restaurantId}")
+    @DeleteMapping("/restaurant/{restaurantId}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     ResponseEntity<Restaurant> deleteMenuByIdRestaurant(@PathVariable int restaurantId) {
         log.info("delete any today menu by restaurant id # {}", restaurantId);

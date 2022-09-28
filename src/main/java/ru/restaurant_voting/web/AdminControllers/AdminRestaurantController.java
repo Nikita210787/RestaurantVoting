@@ -36,8 +36,8 @@ public class AdminRestaurantController {
      * @return all restaurant with menu for today
      */
     @GetMapping("/today")
-    List<RestaurantIncludeMenu> getAllRestaurant() {
-        log.info("getAllRestaurantIncludeMenu.");
+    List<RestaurantIncludeMenu> getAllrestaurantWithMenuForToday() {
+        log.info("get All RestaurantIncludeMenu for today");
         return RestaurantUtil.getTOsIncludeMenu(restaurantRepository.getAllRestaurantWithTodayMenu());
     }
 
@@ -45,15 +45,15 @@ public class AdminRestaurantController {
      * @return all restaurant
      */
     @GetMapping()
-    List<Restaurant> getAllrestaurantWithMenuForToday() {
-        log.info("get all Restaurant with menu for today");
+    List<Restaurant> getAllrestaurant() {
+        log.info("get all Restaurant");
         return restaurantRepository.findAll();
     }
 
     /**
      * add new restaurant
      */
-    @PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping( consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<Restaurant> create(@Valid @RequestBody Restaurant restaurant) {
 
@@ -66,7 +66,7 @@ public class AdminRestaurantController {
     /**
      * delite restaurant by id
      */
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int id) {
         log.info("delete any user # {}", id);
@@ -76,7 +76,7 @@ public class AdminRestaurantController {
     /**
      * update restaurant by id
      */
-    @PutMapping(value = "/update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@Valid @RequestBody Restaurant restaurant, @PathVariable int id) {
         log.info("update restaurant id {}", id);

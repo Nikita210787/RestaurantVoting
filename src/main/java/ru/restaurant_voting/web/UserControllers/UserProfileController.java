@@ -19,10 +19,10 @@ import java.net.URI;
 import java.util.Set;
 
 @RestController
-@RequestMapping(value = "/api/user/account")
+@RequestMapping(value = "/api/user/profile")
 @AllArgsConstructor
 @Slf4j
-public class UserAccountController {
+public class UserProfileController {
 
     private final UserRepository userRepository;
 
@@ -38,7 +38,7 @@ public class UserAccountController {
     /**
      * Delete authorized user by id
      */
-    @DeleteMapping("/delete")
+    @DeleteMapping()
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@AuthenticationPrincipal AuthUser authUser) {
         log.info("delete {}", authUser);
