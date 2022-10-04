@@ -1,5 +1,6 @@
 package ru.restaurant_voting.web.AdminControllers;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -7,20 +8,21 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+import ru.restaurant_voting.error.IllegalRequestDataException;
 import ru.restaurant_voting.model.Role;
 import ru.restaurant_voting.model.User;
 import ru.restaurant_voting.repository.UserRepository;
 import ru.restaurant_voting.util.ValidationUtil;
 import ru.restaurant_voting.web.AuthUser;
 
-import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.Set;
 
 @RestController
-@RequestMapping(value = "/api/admin/account", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/v1/api/admin/account", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
+@Tag(name = "Admin account Controller")
 public class AdminAccountController {
     UserRepository userRepository;
 
@@ -40,7 +42,7 @@ public class AdminAccountController {
     public User getbyId(@PathVariable int id) {
         log.info("Admin request User by id:{}", id);
             return  userRepository.findById(id).orElseThrow(
-                    () -> new EntityNotFoundException("There is no restaurant with such id"));
+                    () -> new IllegalRequestDataException("There is no restaurant with such id"));
     }
 
     /**
@@ -72,7 +74,7 @@ public class AdminAccountController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@Valid @RequestBody User user, @PathVariable int id) {
         log.info("update user id {}", id);
-        User oldUser = userRepository.getByID(id).orElseThrow(() -> new EntityNotFoundException("User with such id not present"));
+        User oldUser = userRepository.getByID(id).orElseThrow(() -> new IllegalRequestDataException("User with such id not present"));
         user.setId(id);
         if (user.getName() == null || user.getName().equals("")) user.setName(oldUser.getName());
         if (user.getLogin() == null || user.getLogin().equals("")) user.setPassword(oldUser.getLogin());

@@ -31,7 +31,7 @@ spring:
   #  https://docs.spring.io/spring-data/rest/docs/current/reference/html/#getting-started.basic-settings
   data:
     rest:
-      base-path: api/
+      defaultPageSize: 20
       return-body-on-create: true
 
   security:
@@ -44,3 +44,9 @@ logging:
   level:
     root: WARN
     ru.restaurant_voting: DEBUG
+
+server.servlet:
+  encoding:
+    charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly
+    enabled: true # Enable http encoding support
+    force: true

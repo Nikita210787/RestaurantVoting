@@ -1,5 +1,6 @@
 package ru.restaurant_voting.web.UserControllers;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,9 +20,10 @@ import java.net.URI;
 import java.util.Set;
 
 @RestController
-@RequestMapping(value = "/api/user/profile")
+@RequestMapping(value = "/v1/api/user/profile")
 @AllArgsConstructor
 @Slf4j
+@Tag(name = "Users profile Controller")
 public class UserProfileController {
 
     private final UserRepository userRepository;
@@ -48,17 +50,21 @@ public class UserProfileController {
     /**
      * create user
      */
-    @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/register",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<User> register(@Valid @RequestBody User user) {
         log.info("register {}", user);
         ValidationUtil.checkNew(user);
         user.setRoles(Set.of(Role.USER));
-        user =  userRepository.save(user);
+        user = userRepository.save(user);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/api/account")
-                .build().toUri();
+                .path("/v1/api/user/profile" + "/{id}")
+                .buildAndExpand(user.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(user);
+
+//        return ResponseEntity.ok(user);//created(uriOfNewResource).body(user);
     }
 
     /**

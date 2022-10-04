@@ -21,7 +21,7 @@ import java.time.LocalDate;
 public class Vote extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false, updatable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     @NotNull
     @JsonIgnore
     private User user;
@@ -32,7 +32,7 @@ public class Vote extends BaseEntity {
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Restaurant restaurant;
 
-    @Column(nullable = false, updatable = false, columnDefinition = "date default CURRENT_DATE()")
+    @Column(nullable = false, columnDefinition = "date default CURRENT_DATE()")
     private Date date = Date.valueOf(LocalDate.now());
 
     public Vote(User user, Restaurant restaurant) {

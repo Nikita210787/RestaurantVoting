@@ -1,5 +1,6 @@
 package ru.restaurant_voting.web.UserControllers;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
@@ -16,8 +17,9 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "api/user/menus")
+@RequestMapping(value = "/v1/api/user/menus")
 @AllArgsConstructor
+@Tag(name = "User Menu Controller")
 public class UserMenuController {
 
     MenuRepository menuRepository;

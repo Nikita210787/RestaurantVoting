@@ -3,32 +3,26 @@ package ru.restaurant_voting.web.AdminControllers;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import ru.restaurant_voting.dto.RestaurantIncludeMenu;
+import ru.restaurant_voting.error.IllegalRequestDataException;
 import ru.restaurant_voting.model.Restaurant;
-import ru.restaurant_voting.model.Role;
-import ru.restaurant_voting.model.User;
 import ru.restaurant_voting.repository.RestaurantRepository;
 import ru.restaurant_voting.util.RestaurantUtil;
 import ru.restaurant_voting.util.ValidationUtil;
 
-import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Set;
-
-import static org.springframework.boot.web.error.ErrorAttributeOptions.Include.MESSAGE;
 
 @RestController
-@RequestMapping(value = "/api/admin/restaurants", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/v1/api/admin/restaurants", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
-@Tag(name = "Menu Controller (for Admin)")
+@Tag(name = "Admin restaurant Controller ")
 public class AdminRestaurantController {
     RestaurantRepository restaurantRepository;
 
@@ -45,7 +39,7 @@ public class AdminRestaurantController {
      * @return all restaurant
      */
     @GetMapping()
-    List<Restaurant> getAllrestaurant() {
+    List<Restaurant> getAllrestaurantWithMenu() {
         log.info("get all Restaurant");
         return restaurantRepository.findAll();
     }
@@ -55,7 +49,7 @@ public class AdminRestaurantController {
      */
     @PostMapping( consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public ResponseEntity<Restaurant> create(@Valid @RequestBody Restaurant restaurant) {
+    public ResponseEntity<Restaurant> createRestaurantWithoutMenu(@Valid @RequestBody Restaurant restaurant) {
 
         log.info("Admin add new Restaurant {}", restaurant);
         ValidationUtil.checkNew(restaurant);
@@ -78,11 +72,11 @@ public class AdminRestaurantController {
      */
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@Valid @RequestBody Restaurant restaurant, @PathVariable int id) {
+    public void updateTitle( @RequestBody Restaurant restaurant, @PathVariable int id) {
         log.info("update restaurant id {}", id);
         Restaurant restaurantForUpdate = restaurantRepository.getByID(id).orElseThrow(
-                () -> new EntityNotFoundException("Restaurant with specified ID does not exist"));
-        if(restaurant.isNew()) restaurantForUpdate.setId(restaurant.getId());
+                () -> new IllegalRequestDataException("Restaurant with specified ID does not exist"));
+        if(restaurant.isNew()) restaurantForUpdate.setId(id);
         else if(restaurant.id()!= restaurantForUpdate.getId())
             throw new ResponseStatusException( HttpStatus.UNPROCESSABLE_ENTITY, "Restaurant id cannot be changed");
         restaurantForUpdate.setTitle(restaurant.getTitle());

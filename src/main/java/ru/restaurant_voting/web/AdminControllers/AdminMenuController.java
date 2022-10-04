@@ -8,28 +8,27 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import ru.restaurant_voting.error.IllegalRequestDataException;
 import ru.restaurant_voting.model.Menu;
 import ru.restaurant_voting.model.Restaurant;
 import ru.restaurant_voting.repository.MenuRepository;
 import ru.restaurant_voting.repository.RestaurantRepository;
 import ru.restaurant_voting.service.MenuServis;
-import ru.restaurant_voting.util.MenuUtil;
 import ru.restaurant_voting.util.ValidationUtil;
 
-import javax.persistence.EntityNotFoundException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import static ru.restaurant_voting.util.MenuUtil.checkDate;
-import static ru.restaurant_voting.util.MenuUtil.checkMenubyId;
 import static ru.restaurant_voting.util.RestaurantUtil.checkExistRestaurantById;
+import static ru.restaurant_voting.util.ValidationUtil.assureIdConsistent;
 
 @RestController
-@RequestMapping(value = "/api/admin/menus", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/v1/api/admin/menus", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
-@Tag(name = "Menu Controller (for Admin)")
+@Tag(name = "Admin menu Controller ")
 public class AdminMenuController {
     MenuRepository menuRepository;
     RestaurantRepository restaurantRepository;
@@ -72,7 +71,7 @@ public class AdminMenuController {
     @PutMapping(value = "/{menuId}/restaurant/{restaurantId}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @Transactional
     ResponseEntity<Menu> update(@PathVariable int menuId, @RequestBody Menu menu, @PathVariable int restaurantId) {
-        checkMenubyId(menu, menuId);
+        assureIdConsistent(menu, menuId);
         checkDate(menu);
         checkExistRestaurantById(restaurantRepository, restaurantId);
         menu.setRestaurant(restaurantRepository.getRestaurantById(restaurantId).get());
@@ -100,9 +99,9 @@ public class AdminMenuController {
     ResponseEntity<Restaurant> deleteMenuByIdRestaurant(@PathVariable int restaurantId) {
         log.info("delete any today menu by restaurant id # {}", restaurantId);
         Restaurant restaurantForUpdate = restaurantRepository.getbyIdWithMenus(restaurantId).
-                orElseThrow(() -> new EntityNotFoundException("not found restautant with such id"));
+                orElseThrow(() -> new IllegalRequestDataException("not found restautant with such id"));
         List<Menu> menus = restaurantForUpdate.getMenus();
-        MenuUtil.deletingFromRepository(menuRepository, menus);
+        MenuServis.deletingFromRepository(menuRepository, menus);
         restaurantForUpdate.setMenus(new ArrayList<>());
         return ResponseEntity.ok(restaurantRepository.save(restaurantForUpdate));
     }

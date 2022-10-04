@@ -22,10 +22,6 @@ public class RestaurantUtil {
 
     }
 
-    public static Restaurant getTOsIncludeMenu(Restaurant restaurant){
-        Restaurant res=new Restaurant(restaurant.getTitle(),restaurant.getMenus(),restaurant.getVotes());
-        return restaurant;
-    }
     public static List<RestaurantIncludeMenu> getTOsIncludeMenu(Collection<Restaurant> restaurants) {
         return restaurants.stream()
                 .filter(r -> r.getMenus().size() > 0)

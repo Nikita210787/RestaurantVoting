@@ -1,7 +1,9 @@
 
 Curls:
-
-RestaurantForUserController
+    
+    ##################################
+    ####RestaurantForUserController###
+    ##################################
 
 GET http://localhost:8080/api/user/restaurants/today
 Authorization: Basic user userPassword
@@ -23,7 +25,7 @@ Content-Type: application/json
 "password": "te4st1111"
 }
 ###
-PUT http://localhost:8080/api/user/account/
+PUT http://localhost:8080/v1/api/user/profile/
 Content-Type: application/json
 Authorization: Basic 1 1
 
@@ -31,12 +33,18 @@ Authorization: Basic 1 1
 "login": "111111111111",
 "name": "1111111111",
 "password": "111111111111"
-}
+1}
 ###
-GET http://localhost:8080/api/user/account
+
+GET http://localhost:8080/v1/api/user/profile
 Authorization: Basic 1 1
+
+Curl:curl -X 'GET' \
+'http://localhost:8080/v1/api/user/profile' \
+-H 'accept: application/json' \
+-H 'Authorization: Basic dXNlcjp1c2VyUGFzc3dvcmQ='
 ###
-###
+
 DELETE http://localhost:8080/api/user/account/delete
 Authorization: Basic 1 1
 
