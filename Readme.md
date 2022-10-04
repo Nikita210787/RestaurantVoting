@@ -1,178 +1,39 @@
+## Application:
+Voting system (Backend) for deciding where to have lunch
 
-Curls:
-    
-    ##################################
-    ####RestaurantForUserController###
-    ##################################
+2 types of users: admin and regular users
+Admin can input a restaurant and it's lunch menu of the day (2-5 items usually, just a dish name and price)
+Menu changes each day (admins do the updates)
+Users can vote for a restaurant they want to have lunch at today
+Only one vote counted per user
+If user votes again the same day:
+If it is before 11:00 we assume that he changed his mind.
+If it is after 11:00 then it is too late, vote can't be changed
+Each restaurant provides a new menu each day.
 
-GET http://localhost:8080/api/user/restaurants/today
-Authorization: Basic user userPassword
-###
-GET http://localhost:8080/api/user/restaurants/today
-Authorization: Basic 2 2
+## Stack
+- JDK 17
+- Maven
+- Spring Boot 2.7.3
+- Spring MVC
+- Spring Data JPA (Hibernate)
+- Spring Security
+- Lombok
+- Jackson
+- JUnit 5
+- Swagger/OpenAPI 3.0
+- H2
 
-    #####################
-    ##AccountController##
-    #####################
+## [REST API documentation](https://github.com/Nikita210787/RestaurantVoting)
 
+## For test
 
-POST http://localhost:8080/api/user/account/register
-Content-Type: application/json
+http://localhost:8080/swagger-ui.html
+http://localhost:8080/v3/api-docs
 
-{
-"login": "Tes31132",
-"name": "Te141423std",
-"password": "te4st1111"
-}
-###
-PUT http://localhost:8080/v1/api/user/profile/
-Content-Type: application/json
-Authorization: Basic 1 1
+Credentials:
 
-{
-"login": "111111111111",
-"name": "1111111111",
-"password": "111111111111"
-1}
-###
-
-GET http://localhost:8080/v1/api/user/profile
-Authorization: Basic 1 1
-
-Curl:curl -X 'GET' \
-'http://localhost:8080/v1/api/user/profile' \
--H 'accept: application/json' \
--H 'Authorization: Basic dXNlcjp1c2VyUGFzc3dvcmQ='
-###
-
-DELETE http://localhost:8080/api/user/account/delete
-Authorization: Basic 1 1
-
-
-    ##################
-    ##VoteController##
-    ##################
-
-
-GET http://localhost:8080/api/user/votes/current
-Authorization: Basic user userPassword
-###
-POST
-
-    ######################
-    ##UserMenuController##
-    ######################
-
-GET http://localhost:8080/api/user/menu/today
-Authorization: Basic 1 1
-###
-POST http://localhost:8080/api/user/votes/1
-Authorization: Basic 2 2
-Content-Type: application/json
-    
-    ##########################
-    ##AdminAccountController##
-    ##########################
-GET http://localhost:8080/api/admin/account
-Authorization: Basic PetrLogin userPassword
-###
-GET http://localhost:8080/api/admin/account/3
-Authorization: Basic 2 2
-###
-DELETE http://localhost:8080/api/admin/account/delete/3
-Authorization: Basic VasiaLogin userPassword
-###
-POST http://localhost:8080/api/admin/account/register
-Authorization: Basic 2 2
-Content-Type: application/json
-
-{
-"login": "Tes3111322",
-"name": "Te1414123std",
-"password": "t1e4st1111"
-}
-###
-PUT http://localhost:8080/api/admin/account/update/1
-Authorization: Basic admin adminPassword
-Content-Type: application/json
-
-{
-"name": "123",
-"login": "34",
-"password":"1"
-}
-
-    #############################
-    ##AdminRestaurantController##
-    #############################
-GET http://localhost:8080/api/admin/restaurants
-Authorization: Basic 2 2
-##
-DELETE http://localhost:8080/api/admin/restaurants/delete/3
-Authorization:Basic 2 2
-##
-PUT http://localhost:8080/api/admin/restaurants/update/4
-Authorization: Basic 2 2
-Content-Type: application/json
-
-{
-"title" : "testte12st"
-}
-##
-POST http://localhost:8080/api/admin/restaurants/add
-Authorization: Basic 2 2
-Content-Type: application/json
-
-{
-"title" : "teesf23412st"
-}
-
-    #######################
-    ##AdminMenuController##
-    #######################
-
-###
-GET http://localhost:8080/menus/api/admin/restaurant/3
-###
-GET http://localhost:8080/menus/api/admin/today
-Authorization: Basic 2 2
-###
-POST http://localhost:8080/api/admin/menus/add/4
-Authorization: Basic 2 2
-Content-Type: application/json
-
-{
-"date": "2022-09-28",
-"meals": [
-{
-"title": "mea445345oDay",
-"price": 74
-},
-{
-"title": "me345al4545ToDay",
-"price": 34
-}
-]
-}
-
-###
-PUT http://localhost:8080/api/admin/menus/update/menu_1/restaurant_1
-Authorization: Basic 2 2
-Content-Type: application/json
-
-{
-"meals": [
-{
-"title": "mea445345oDay",
-"price": 74
-},
-{
-"title": "me345al4545ToDay",
-"price": 34
-}
-]
-}
-###
-DELETE http://localhost:8080/api/admin/menus/deleteallmenu/1
-Authorization: Basic 2 2
-############################################################################################
+```
+Admin: admin / adminPassword
+User:  user / userPassword
+```
