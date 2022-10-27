@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class MenuServis {
+public class MenuService {
     public void checkBeforUpdate(@Valid Menu menu) {}
     public static void deletingFromRepository(MenuRepository menuRepository, List<Menu> menus) {
         ArrayList<Integer> menusId = new ArrayList<>();

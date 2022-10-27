@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.UserControllers;
+package ru.restaurant_voting.web.userControllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -20,11 +20,13 @@ import java.net.URI;
 import java.util.Set;
 
 @RestController
-@RequestMapping(value = "/v1/api/user/profile")
+@RequestMapping(UserProfileController.URL)
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Users profile Controller")
 public class UserProfileController {
+
+    protected static final String URL="/v1/api/user/profile";
 
     private final UserRepository userRepository;
 

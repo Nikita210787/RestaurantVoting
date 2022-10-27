@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.AdminControllers;
+package ru.restaurant_voting.web.adminControllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -19,11 +19,13 @@ import javax.validation.Valid;
 import java.util.Set;
 
 @RestController
-@RequestMapping(value = "/v1/api/admin/account", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = AdminAccountController.URL, produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Admin account Controller")
 public class AdminAccountController {
+    static final String URL = "/v1/api/admin/account";
+
     UserRepository userRepository;
 
     /**

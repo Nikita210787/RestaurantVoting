@@ -6,7 +6,7 @@ VALUES ('User', 'user', '{noop}userPassword'),
        ('User1', '1', '{noop}1'),
        ('User2', '2', '{noop}2');
 
-INSERT INTO USER_ROLES (USER_ID, ROLE)
+INSERT INTO USER_ROLES (USER_ID, ROLE )
 VALUES (1, 'USER'),
        (3, 'USER'),
        (4, 'USER'),

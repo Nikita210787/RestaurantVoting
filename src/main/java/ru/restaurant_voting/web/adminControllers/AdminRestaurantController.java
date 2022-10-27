@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.AdminControllers;
+package ru.restaurant_voting.web.adminControllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -19,11 +19,12 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/v1/api/admin/restaurants", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = AdminRestaurantController.URL, produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Admin restaurant Controller ")
 public class AdminRestaurantController {
+    static final String URL = "/v1/api/admin/restaurants";
     RestaurantRepository restaurantRepository;
 
     /**
@@ -74,7 +75,7 @@ public class AdminRestaurantController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateTitle( @RequestBody Restaurant restaurant, @PathVariable int id) {
         log.info("update restaurant id {}", id);
-        Restaurant restaurantForUpdate = restaurantRepository.getByID(id).orElseThrow(
+        Restaurant restaurantForUpdate = restaurantRepository.getByID(id).orElseThrow(//!!!!!!!!!!!!!!!!!!!!1
                 () -> new IllegalRequestDataException("Restaurant with specified ID does not exist"));
         if(restaurant.isNew()) restaurantForUpdate.setId(id);
         else if(restaurant.id()!= restaurantForUpdate.getId())

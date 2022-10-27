@@ -10,7 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 @NoRepositoryBean
 //https://stackoverflow.com/questions/11576831/understanding-the-spring-data-jpa-norepositorybean-interface
 public interface BaseEntityRepository<T> extends JpaRepository<T, Integer> {
-
+    /**
+     *
+     * @param id
+     * @return void. delete entity by id.
+     */
     @Transactional
     @Modifying(clearAutomatically = true)
     @Query("DELETE FROM #{#entityName} e WHERE e.id=:id")

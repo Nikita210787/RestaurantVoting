@@ -8,11 +8,19 @@ import java.util.List;
 
 @Repository
 public interface MenuRepository extends BaseEntityRepository<Menu> {
-
+    /**
+     *
+     * @param restaurantId
+     * @param localDate
+     * @return List menu restaurant by id, with date
+     */
     List<Menu> getMenuByRestaurantIdAndDate(int restaurantId, LocalDate localDate);
 
     /**
-     * @return menu date
+     *
+     * @param localDate
+     * @return menu date.
      **/
+
     List<Menu> getMenusByDate(LocalDate localDate);
 }

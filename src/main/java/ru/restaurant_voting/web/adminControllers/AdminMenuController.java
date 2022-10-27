@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.AdminControllers;
+package ru.restaurant_voting.web.adminControllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import ru.restaurant_voting.model.Menu;
 import ru.restaurant_voting.model.Restaurant;
 import ru.restaurant_voting.repository.MenuRepository;
 import ru.restaurant_voting.repository.RestaurantRepository;
-import ru.restaurant_voting.service.MenuServis;
+import ru.restaurant_voting.service.MenuService;
 import ru.restaurant_voting.util.ValidationUtil;
 
 import java.time.LocalDate;
@@ -25,14 +25,15 @@ import static ru.restaurant_voting.util.RestaurantUtil.checkExistRestaurantById;
 import static ru.restaurant_voting.util.ValidationUtil.assureIdConsistent;
 
 @RestController
-@RequestMapping(value = "/v1/api/admin/menus", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = AdminMenuController.URL, produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Admin menu Controller ")
 public class AdminMenuController {
+    static final String URL = "/v1/api/admin/menus";
     MenuRepository menuRepository;
     RestaurantRepository restaurantRepository;
-    MenuServis menuServis;
+    MenuService menuService;
 
     /**
      * @return All Menu with restaurant id for today
@@ -74,8 +75,9 @@ public class AdminMenuController {
         assureIdConsistent(menu, menuId);
         checkDate(menu);
         checkExistRestaurantById(restaurantRepository, restaurantId);
-        menu.setRestaurant(restaurantRepository.getRestaurantById(restaurantId).get());
-        menuServis.checkBeforUpdate(menu);
+        menu.setRestaurant(restaurantRepository.getByID(restaurantId).orElseThrow(
+                () -> new IllegalRequestDataException("Restaurant with specified ID does not exist")));
+        menuService.checkBeforUpdate(menu);
         log.info("updated {} for Restaurant:{}", menu, restaurantId);
         Menu menuAfterUpdate = menuRepository.save(menu);
         return ResponseEntity.ok(menuAfterUpdate);
@@ -101,7 +103,7 @@ public class AdminMenuController {
         Restaurant restaurantForUpdate = restaurantRepository.getbyIdWithMenus(restaurantId).
                 orElseThrow(() -> new IllegalRequestDataException("not found restautant with such id"));
         List<Menu> menus = restaurantForUpdate.getMenus();
-        MenuServis.deletingFromRepository(menuRepository, menus);
+        MenuService.deletingFromRepository(menuRepository, menus);
         restaurantForUpdate.setMenus(new ArrayList<>());
         return ResponseEntity.ok(restaurantRepository.save(restaurantForUpdate));
     }

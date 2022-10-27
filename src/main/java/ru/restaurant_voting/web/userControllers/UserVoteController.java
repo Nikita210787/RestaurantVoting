@@ -1,5 +1,5 @@
 
-package ru.restaurant_voting.web.UserControllers;
+package ru.restaurant_voting.web.userControllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -19,11 +19,13 @@ import ru.restaurant_voting.web.AuthUser;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/v1/api/user/votes")
+@RequestMapping(UserVoteController.URL_VOTES)
 @Slf4j
 @AllArgsConstructor
 @Tag(name = "User vote controller")
 public class UserVoteController {
+    public static final String URL_VOTES = "/v1/api/user/votes";
+
     RestaurantRepository restaurantRepository;
     VoteRepository voteRepository;
     VoteService voteService;
@@ -38,7 +40,7 @@ public class UserVoteController {
     }
 
     /**
-     * ;
+     *
      * User vote or change self voice for today
      */
     @PostMapping(value = "/restaurant/{id}",
@@ -47,11 +49,10 @@ public class UserVoteController {
     ResponseEntity<Vote> vote(@PathVariable int id, @AuthenticationPrincipal AuthUser authUser) {
         Vote vote = voteService.voteForRestaurant(id, authUser.getUser());
         log.info("Vote - user:{} restaurant:{}", authUser.id(), id);
-        /*URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/v1/api/user/votes" + "/{id}")
+        URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path(URL_VOTES+"/restaurant/" +id)
                 .buildAndExpand(vote.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(vote);
-*/  return ResponseEntity.ok(vote);
     }
 }
 
