@@ -40,7 +40,6 @@ public class UserVoteController {
     }
 
     /**
-     *
      * User vote or change self voice for today
      */
     @PostMapping(value = "/restaurant/{id}",
@@ -50,7 +49,7 @@ public class UserVoteController {
         Vote vote = voteService.voteForRestaurant(id, authUser.getUser());
         log.info("Vote - user:{} restaurant:{}", authUser.id(), id);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path(URL_VOTES+"/restaurant/" +id)
+                .path(URL_VOTES + "/restaurant/" + id)
                 .buildAndExpand(vote.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(vote);
     }

@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.userControllerTest;
+package ru.restaurant_voting.web.userController;
 
 import org.junit.jupiter.api.Test;
 import ru.restaurant_voting.web.AbstractControllerTest;

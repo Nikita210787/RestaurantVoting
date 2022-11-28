@@ -2,6 +2,7 @@ package ru.restaurant_voting.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 //import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.data.domain.Persistable;
 import org.springframework.data.util.ProxyUtils;
@@ -17,12 +18,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class BaseEntity implements Persistable<Integer>{
 
-    //doesn't work for hibernate lazy proxy
+
     @ToString.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-  //  @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+
     protected Integer id;
     public int id() {
         Assert.notNull(id, "Entity must have id");

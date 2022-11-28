@@ -27,7 +27,7 @@ public class VoteService {
 
     public Vote voteForRestaurant(int restaurantId, User user)  {
         Restaurant restaurantToVote = restaurantRepository.findById(restaurantId).orElseThrow(
-                () -> new IllegalArgumentException("Restaurant with such id not present")
+                () -> new EntityNotFoundException("Restaurant with such id not present")
         );
 
         Optional<Vote> todayVoteForUser = voteRepository.getTodayVoteForUser(user);

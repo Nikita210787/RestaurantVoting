@@ -25,6 +25,7 @@ public class UserMenuController {
 
     MenuRepository menuRepository;
     RestaurantRepository restaurantRepository;
+
     /**
      * @return All Menu with restaurant id for today
      */
@@ -33,6 +34,7 @@ public class UserMenuController {
         log.info("getAllMenuForToday");
         return menuRepository.getMenusByDate(LocalDate.now());
     }
+
     /**
      * @return Today Menu by restaurant Id
      */

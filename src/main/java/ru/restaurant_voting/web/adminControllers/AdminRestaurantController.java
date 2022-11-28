@@ -48,7 +48,7 @@ public class AdminRestaurantController {
     /**
      * add new restaurant
      */
-    @PostMapping( consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<Restaurant> createRestaurantWithoutMenu(@Valid @RequestBody Restaurant restaurant) {
 
@@ -73,13 +73,13 @@ public class AdminRestaurantController {
      */
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateTitle( @RequestBody Restaurant restaurant, @PathVariable int id) {
+    public void updateTitle(@RequestBody Restaurant restaurant, @PathVariable int id) {
         log.info("update restaurant id {}", id);
         Restaurant restaurantForUpdate = restaurantRepository.getByID(id).orElseThrow(//!!!!!!!!!!!!!!!!!!!!1
                 () -> new IllegalRequestDataException("Restaurant with specified ID does not exist"));
-        if(restaurant.isNew()) restaurantForUpdate.setId(id);
-        else if(restaurant.id()!= restaurantForUpdate.getId())
-            throw new ResponseStatusException( HttpStatus.UNPROCESSABLE_ENTITY, "Restaurant id cannot be changed");
+        if (restaurant.isNew()) restaurantForUpdate.setId(id);
+        else if (restaurant.id() != restaurantForUpdate.getId())
+            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Restaurant id cannot be changed");
         restaurantForUpdate.setTitle(restaurant.getTitle());
         restaurantRepository.save(restaurantForUpdate);
     }

@@ -3,7 +3,6 @@ package ru.restaurant_voting.repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ru.restaurant_voting.model.Restaurant;
-import ru.restaurant_voting.model.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +20,7 @@ public interface RestaurantRepository extends BaseEntityRepository<Restaurant> {
      * @ return all Restaurant with menu. For admin.
      */
     @Query("SELECT r FROM Restaurant r JOIN FETCH r.menus")
-    List<Restaurant> getWithMenusallREstaurant();
+    List<Restaurant> getWithMenusAllREstaurant();
 
     /**
      * return all Restaurant with menu by ID.
@@ -30,7 +29,6 @@ public interface RestaurantRepository extends BaseEntityRepository<Restaurant> {
     Optional<Restaurant> getbyIdWithMenus(int restaurantId);
 
     /**
-     *
      * @param id
      * @return restaurant with id
      */

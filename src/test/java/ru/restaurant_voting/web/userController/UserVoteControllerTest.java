@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.userControllerTest;
+package ru.restaurant_voting.web.userController;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +14,16 @@ import ru.restaurant_voting.repository.VoteRepository;
 import ru.restaurant_voting.service.TimeService;
 import ru.restaurant_voting.web.AbstractControllerTest;
 
-import java.time.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static ru.restaurant_voting.web.userControllers.UserVoteController.URL_VOTES;
 import static ru.restaurant_voting.web.testData.UserTestData.USER_ID;
 import static ru.restaurant_voting.web.testData.VoteTestData.*;
+import static ru.restaurant_voting.web.userControllers.UserVoteController.URL_VOTES;
 
 @SpringBootTest
 @Transactional
@@ -56,29 +59,28 @@ class UserVoteControllerTest extends AbstractControllerTest {
     @Test
     @WithUserDetails(value = "user")
     void voteBeforeDeadlineAgainOrFirstlyToday() throws Exception {
-        clockForAppointTime.appointTime(ZonedDateTime.of(LocalDate.now(), LocalTime.of(10,59), ZoneId.systemDefault()));
-        perform(MockMvcRequestBuilders.post(URL_VOTES+"/restaurant/{id}",EXISTING_RESTAURANT_ID)
+        clockForAppointTime.appointTime(ZonedDateTime.of(LocalDate.now(), LocalTime.of(10, 59), ZoneId.systemDefault()));
+        perform(MockMvcRequestBuilders.post(URL_VOTES + "/restaurant/{id}", EXISTING_RESTAURANT_ID)
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().isCreated());
-   ; }
-    //TODO TEST
+    }
+
     @Test
     @WithUserDetails(value = "user")
     void voteAfterDeadlineAgainToday() throws Exception {
-        clockForAppointTime.appointTime(ZonedDateTime.of(LocalDate.now(), LocalTime.of(11,59), ZoneId.systemDefault()));
-        perform(MockMvcRequestBuilders.post(URL_VOTES+"/restaurant/{id}",EXISTING_RESTAURANT_ID)
+        clockForAppointTime.appointTime(ZonedDateTime.of(LocalDate.now(), LocalTime.of(11, 59), ZoneId.systemDefault()));
+        perform(MockMvcRequestBuilders.post(URL_VOTES + "/restaurant/{id}", EXISTING_RESTAURANT_ID)
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().isConflict());
-
     }
 
     @Test
     @WithUserDetails(value = "user")
     void voteForNonExistent() throws Exception {
-        perform(MockMvcRequestBuilders.post(URL_VOTES+"/restaurant/").contentType(MediaType.APPLICATION_JSON_VALUE)
-                .param("id", String.valueOf(NON_EXISTENT_RESTAURANT_ID)))
+        perform(MockMvcRequestBuilders.post(URL_VOTES + "/restaurant/{id}", NON_EXISTENT_RESTAURANT_ID)
+                .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().isNotFound());
     }

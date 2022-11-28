@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: ru.restaurant_voting.web.userControllerTest.UserControllerTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 11.882 s <<< FAILURE! - in ru.restaurant_voting.web.userControllerTest.UserControllerTest
+delete  Time elapsed: 0.485 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to create SecurityContext using @org.springframework.security.test.context.support.WithUserDetails(setupBefore=TEST_METHOD, userDetailsServiceBeanName="", value="admin@javaops.ru")
+Caused by: org.springframework.security.core.userdetails.UsernameNotFoundException: User 'admin@javaops.ru' was not found
+
+getAll  Time elapsed: 0.114 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to create SecurityContext using @org.springframework.security.test.context.support.WithUserDetails(setupBefore=TEST_METHOD, userDetailsServiceBeanName="", value="admin@javaops.ru")
+Caused by: org.springframework.security.core.userdetails.UsernameNotFoundException: User 'admin@javaops.ru' was not found
+
+get  Time elapsed: 0.045 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to create SecurityContext using @org.springframework.security.test.context.support.WithUserDetails(setupBefore=TEST_METHOD, userDetailsServiceBeanName="", value="admin@javaops.ru")
+Caused by: org.springframework.security.core.userdetails.UsernameNotFoundException: User 'admin@javaops.ru' was not found
+
+getByEmail  Time elapsed: 0.05 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to create SecurityContext using @org.springframework.security.test.context.support.WithUserDetails(setupBefore=TEST_METHOD, userDetailsServiceBeanName="", value="admin@javaops.ru")
+Caused by: org.springframework.security.core.userdetails.UsernameNotFoundException: User 'admin@javaops.ru' was not found
+
+getForbidden  Time elapsed: 0.057 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to create SecurityContext using @org.springframework.security.test.context.support.WithUserDetails(setupBefore=TEST_METHOD, userDetailsServiceBeanName="", value="user@gmail.com")
+Caused by: org.springframework.security.core.userdetails.UsernameNotFoundException: User 'user@gmail.com' was not found
+

@@ -15,18 +15,19 @@ import ru.restaurant_voting.repository.UserRepository;
 import ru.restaurant_voting.util.ValidationUtil;
 import ru.restaurant_voting.web.AuthUser;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.Set;
 
 @RestController
-@RequestMapping(UserProfileController.URL)
+@RequestMapping(UserProfileController.URL_PROFILE_CONTROLLER_TEST)
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Users profile Controller")
 public class UserProfileController {
 
-    protected static final String URL="/v1/api/user/profile";
+    public static final String URL_PROFILE_CONTROLLER_TEST = "/v1/api/user/profile";
 
     private final UserRepository userRepository;
 

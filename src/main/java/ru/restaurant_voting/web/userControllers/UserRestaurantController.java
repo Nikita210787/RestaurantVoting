@@ -7,9 +7,9 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.restaurant_voting.dto.RestaurantIncludeMenu;
 import ru.restaurant_voting.repository.RestaurantRepository;
 import ru.restaurant_voting.util.RestaurantUtil;
-import ru.restaurant_voting.dto.RestaurantIncludeMenu;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ import java.util.List;
 @Tag(name = "User restaurant Controller")
 public class UserRestaurantController {
 
-    public static final String RESTAURANT_URL ="/v1/api/user/restaurants" ;
+    public static final String RESTAURANT_URL = "/v1/api/user/restaurants";
     RestaurantRepository restaurantRepository;
 
     /**
@@ -28,7 +28,7 @@ public class UserRestaurantController {
      */
     @GetMapping("/today")
     List<RestaurantIncludeMenu> getRestaurantTodayMenu() {
-        log.info("getAllRestaurantTodayMenu. RestaurantForUserControllerJob");
+        log.info("getAllRestaurantTodayMenu. RestaurantForUserController");
         return RestaurantUtil.getTOsIncludeMenu(restaurantRepository.getAllRestaurantWithTodayMenu());
     }
 

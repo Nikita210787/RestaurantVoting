@@ -3,12 +3,9 @@ package ru.restaurant_voting.web;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.ResultMatcher;
-import ru.restaurant_voting.dto.RestaurantIncludeMenu;
-import ru.restaurant_voting.model.Restaurant;
 import ru.restaurant_voting.util.JsonUtil;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Collection;
 import java.util.List;
 import java.util.function.BiConsumer;
 

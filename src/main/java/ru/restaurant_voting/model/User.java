@@ -33,7 +33,6 @@ public class User extends BaseEntity implements Serializable {
 
     @Column(nullable = false)
     @NotBlank
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JsonDeserialize(using = JsonDeserializers.PasswordDeserializer.class)
 
     private String password;

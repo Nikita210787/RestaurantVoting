@@ -13,7 +13,7 @@ import static ru.restaurant_voting.web.testData.MealTestData.*;
 public class MenuTestData {
     public static final MatcherFactory.Matcher<Menu> MENU_MATCHER = MatcherFactory.usingRecursiveIgnoreFieldsComparator(Menu.class);
 
-    public static final int MENU_ID_1 = 1;
+  /*  public static final int MENU_ID_1 = 1;
     public static final int MENU_ID_2 = 2;
     public static final int MENU_ID_3 = 3;
     public static final int MENU_ID_4 = 4;
@@ -37,5 +37,5 @@ public class MenuTestData {
     public static final Menu MENU_5 = new Menu(RestaurantTestData.RESTAURANT_5, LocalDate.now(), MENU_5_MealES);
     public static final Menu MENU_6 = new Menu(RestaurantTestData.RESTAURANT_1, LocalDate.of(2022, 6, 15), MENU_6_MealES);
     public static final Menu MENU_7 = new Menu(RestaurantTestData.RESTAURANT_1, LocalDate.now(), MENU_7_MealES);
-}
+*/}
 

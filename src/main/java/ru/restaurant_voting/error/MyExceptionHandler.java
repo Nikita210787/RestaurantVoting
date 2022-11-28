@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 
 import static org.springframework.boot.web.error.ErrorAttributeOptions.Include.MESSAGE;
 
+//https://habr.com/ru/post/675716/
 @RestControllerAdvice
 @AllArgsConstructor
 @Slf4j

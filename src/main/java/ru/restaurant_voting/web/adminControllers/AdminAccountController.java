@@ -31,7 +31,7 @@ public class AdminAccountController {
     /**
      * @return authorized admin
      */
-    @GetMapping(value = "/profile",  produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/profile", produces = MediaType.APPLICATION_JSON_VALUE)
     public User getAccount(@AuthenticationPrincipal AuthUser authUser) {
         log.info("get {}", authUser);
         return authUser.getUser();
@@ -43,8 +43,8 @@ public class AdminAccountController {
     @GetMapping(value = "/{id}")
     public User getbyId(@PathVariable int id) {
         log.info("Admin request User by id:{}", id);
-            return  userRepository.findById(id).orElseThrow(
-                    () -> new IllegalRequestDataException("There is no restaurant with such id"));
+        return userRepository.findById(id).orElseThrow(
+                () -> new IllegalRequestDataException("There is no restaurant with such id"));
     }
 
     /**
@@ -69,6 +69,7 @@ public class AdminAccountController {
         user = userRepository.save(user);
         return ResponseEntity.ok(userRepository.save(user));
     }
+
     /**
      * update any user by id.
      */
