@@ -1,0 +1,1641 @@
+# Created at 2022-12-01T17:24:58.187
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+
+# Created at 2022-12-01T17:24:58.695
+Unexpected IOException: 5,1,ru.restaurant_voting.web.userController.UserProfileControllerTest,getForbidden,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.702
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.704
+Unexpected IOException with stream: MockHttpServletRequest:
+
+
+# Created at 2022-12-01T17:24:58.706
+Unexpected IOException with stream:       HTTP Method = GET
+
+
+# Created at 2022-12-01T17:24:58.707
+Unexpected IOException with stream:       Request URI = /v1/api/user/profile
+
+
+# Created at 2022-12-01T17:24:58.708
+Unexpected IOException with stream:        Parameters = {}
+
+
+# Created at 2022-12-01T17:24:58.709
+Unexpected IOException with stream:           Headers = []
+
+
+# Created at 2022-12-01T17:24:58.710
+Unexpected IOException with stream:              Body = null
+
+
+# Created at 2022-12-01T17:24:58.711
+Unexpected IOException with stream:     Session Attrs = {}
+
+
+# Created at 2022-12-01T17:24:58.712
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.714
+Unexpected IOException with stream: Handler:
+
+
+# Created at 2022-12-01T17:24:58.715
+Unexpected IOException with stream:              Type = null
+
+
+# Created at 2022-12-01T17:24:58.716
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.717
+Unexpected IOException with stream: Async:
+
+
+# Created at 2022-12-01T17:24:58.718
+Unexpected IOException with stream:     Async started = false
+
+
+# Created at 2022-12-01T17:24:58.719
+Unexpected IOException with stream:      Async result = null
+
+
+# Created at 2022-12-01T17:24:58.721
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.722
+Unexpected IOException with stream: Resolved Exception:
+
+
+# Created at 2022-12-01T17:24:58.723
+Unexpected IOException with stream:              Type = null
+
+
+# Created at 2022-12-01T17:24:58.724
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.725
+Unexpected IOException with stream: ModelAndView:
+
+
+# Created at 2022-12-01T17:24:58.726
+Unexpected IOException with stream:         View name = null
+
+
+# Created at 2022-12-01T17:24:58.727
+Unexpected IOException with stream:              View = null
+
+
+# Created at 2022-12-01T17:24:58.728
+Unexpected IOException with stream:             Model = null
+
+
+# Created at 2022-12-01T17:24:58.729
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.730
+Unexpected IOException with stream: FlashMap:
+
+
+# Created at 2022-12-01T17:24:58.731
+Unexpected IOException with stream:        Attributes = null
+
+
+# Created at 2022-12-01T17:24:58.732
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.734
+Unexpected IOException with stream: MockHttpServletResponse:
+
+
+# Created at 2022-12-01T17:24:58.735
+Unexpected IOException with stream:            Status = 401
+
+
+# Created at 2022-12-01T17:24:58.737
+Unexpected IOException with stream:     Error message = Unauthorized
+
+
+# Created at 2022-12-01T17:24:58.739
+Unexpected IOException with stream:           Headers = [WWW-Authenticate:"Basic realm="Realm"", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+
+
+# Created at 2022-12-01T17:24:58.741
+Unexpected IOException with stream:      Content type = null
+
+
+# Created at 2022-12-01T17:24:58.743
+Unexpected IOException with stream:              Body = 
+
+
+# Created at 2022-12-01T17:24:58.744
+Unexpected IOException with stream:     Forwarded URL = null
+
+
+# Created at 2022-12-01T17:24:58.746
+Unexpected IOException with stream:    Redirected URL = null
+
+
+# Created at 2022-12-01T17:24:58.747
+Unexpected IOException with stream:           Cookies = []
+
+
+# Created at 2022-12-01T17:24:58.755
+Unexpected IOException: 6,1,ru.restaurant_voting.web.userController.UserProfileControllerTest,getForbidden,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.757
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,ru.restaurant_voting.web.userController.UserProfileControllerTest,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.759
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,ru.restaurant_voting.web.userController.UserRestaurantControllerTest,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.780
+Unexpected IOException: 5,1,ru.restaurant_voting.web.userController.UserRestaurantControllerTest,getRestaurantTodayMenu,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.785
+Unexpected IOException with stream: 2022-12-01 17:24:58.784 DEBUG 7536 --- [           main] r.r.config.WebSecurityConfig             : Authenticating 'user'
+
+
+# Created at 2022-12-01T17:24:58.787
+Unexpected IOException with stream: Hibernate: 
+    select
+        user0_.id as id1_3_,
+        user0_.login as login2_3_,
+        user0_.name as name3_3_,
+        user0_.password as password4_3_ 
+    from
+        users user0_ 
+    where
+        user0_.login=?
+
+
+# Created at 2022-12-01T17:24:58.791
+Unexpected IOException with stream: Hibernate: 
+    select
+        roles0_.user_id as user_id1_2_0_,
+        roles0_.role as role2_2_0_ 
+    from
+        user_roles roles0_ 
+    where
+        roles0_.user_id=?
+
+
+# Created at 2022-12-01T17:24:58.798
+Unexpected IOException with stream: 2022-12-01 17:24:58.796  INFO 7536 --- [           main] r.r.w.u.UserRestaurantController         : getAllRestaurantTodayMenu. RestaurantForUserController
+
+
+# Created at 2022-12-01T17:24:58.801
+Unexpected IOException with stream: Hibernate: 
+    select
+        restaurant0_.id as id1_1_0_,
+        menus1_.id as id1_0_1_,
+        restaurant0_.title as title2_1_0_,
+        menus1_.date as date2_0_1_,
+        menus1_.meals as meals3_0_1_,
+        menus1_.restaurant_id as restaura4_0_1_,
+        menus1_.restaurant_id as restaura4_0_0__,
+        menus1_.id as id1_0_0__ 
+    from
+        restaurant restaurant0_ 
+    inner join
+        menu menus1_ 
+            on restaurant0_.id=menus1_.restaurant_id 
+    where
+        menus1_.date=CURRENT_DATE
+
+
+# Created at 2022-12-01T17:24:58.810
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.812
+Unexpected IOException with stream: MockHttpServletRequest:
+
+
+# Created at 2022-12-01T17:24:58.815
+Unexpected IOException with stream:       HTTP Method = GET
+
+
+# Created at 2022-12-01T17:24:58.817
+Unexpected IOException with stream:       Request URI = /v1/api/user/restaurants/today
+
+
+# Created at 2022-12-01T17:24:58.818
+Unexpected IOException with stream:        Parameters = {}
+
+
+# Created at 2022-12-01T17:24:58.820
+Unexpected IOException with stream:           Headers = []
+
+
+# Created at 2022-12-01T17:24:58.821
+Unexpected IOException with stream:              Body = null
+
+
+# Created at 2022-12-01T17:24:58.823
+Unexpected IOException with stream:     Session Attrs = {}
+
+
+# Created at 2022-12-01T17:24:58.825
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.826
+Unexpected IOException with stream: Handler:
+
+
+# Created at 2022-12-01T17:24:58.828
+Unexpected IOException with stream:              Type = ru.restaurant_voting.web.userControllers.UserRestaurantController
+
+
+# Created at 2022-12-01T17:24:58.831
+Unexpected IOException with stream:            Method = ru.restaurant_voting.web.userControllers.UserRestaurantController#getRestaurantTodayMenu()
+
+
+# Created at 2022-12-01T17:24:58.833
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.835
+Unexpected IOException with stream: Async:
+
+
+# Created at 2022-12-01T17:24:58.837
+Unexpected IOException with stream:     Async started = false
+
+
+# Created at 2022-12-01T17:24:58.838
+Unexpected IOException with stream:      Async result = null
+
+
+# Created at 2022-12-01T17:24:58.840
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.841
+Unexpected IOException with stream: Resolved Exception:
+
+
+# Created at 2022-12-01T17:24:58.842
+Unexpected IOException with stream:              Type = null
+
+
+# Created at 2022-12-01T17:24:58.844
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.845
+Unexpected IOException with stream: ModelAndView:
+
+
+# Created at 2022-12-01T17:24:58.847
+Unexpected IOException with stream:         View name = null
+
+
+# Created at 2022-12-01T17:24:58.848
+Unexpected IOException with stream:              View = null
+
+
+# Created at 2022-12-01T17:24:58.849
+Unexpected IOException with stream:             Model = null
+
+
+# Created at 2022-12-01T17:24:58.851
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.852
+Unexpected IOException with stream: FlashMap:
+
+
+# Created at 2022-12-01T17:24:58.853
+Unexpected IOException with stream:        Attributes = null
+
+
+# Created at 2022-12-01T17:24:58.854
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.855
+Unexpected IOException with stream: MockHttpServletResponse:
+
+
+# Created at 2022-12-01T17:24:58.856
+Unexpected IOException with stream:            Status = 200
+
+
+# Created at 2022-12-01T17:24:58.857
+Unexpected IOException with stream:     Error message = null
+
+
+# Created at 2022-12-01T17:24:58.858
+Unexpected IOException with stream:           Headers = [Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+
+
+# Created at 2022-12-01T17:24:58.859
+Unexpected IOException with stream:      Content type = application/json;charset=UTF-8
+
+
+# Created at 2022-12-01T17:24:58.860
+Unexpected IOException with stream:              Body = [{"id":1,"name":"Shaurma_na_Kazanskom","todayMenu":{"id":3,"date":"2022-12-01","meals":[{"title":"mealToDay","price":75},{"title":"meallToDay","price":330},{"title":"meallToDay","price":45}]}},{"id":2,"name":"Shaurma_na_Leningradskom1","todayMenu":{"id":5,"date":"2022-12-01","meals":[{"title":"mealToDay","price":34},{"title":"mealToDay","price":660},{"title":"mealToDay","price":760}]}},{"id":3,"name":"Shaurma_na_Leningradskom2","todayMenu":{"id":7,"date":"2022-12-01","meals":[{"title":"mealToDay","price":74},{"title":"mealToDay","price":34},{"title":"mealToDay","price":66},{"title":"mealToDay","price":760}]}}]
+
+
+# Created at 2022-12-01T17:24:58.861
+Unexpected IOException with stream:     Forwarded URL = null
+
+
+# Created at 2022-12-01T17:24:58.862
+Unexpected IOException with stream:    Redirected URL = null
+
+
+# Created at 2022-12-01T17:24:58.863
+Unexpected IOException with stream:           Cookies = []
+
+
+# Created at 2022-12-01T17:24:58.866
+Unexpected IOException with stream: Hibernate: 
+    select
+        restaurant0_.id as id1_1_0_,
+        menus1_.id as id1_0_1_,
+        restaurant0_.title as title2_1_0_,
+        menus1_.date as date2_0_1_,
+        menus1_.meals as meals3_0_1_,
+        menus1_.restaurant_id as restaura4_0_1_,
+        menus1_.restaurant_id as restaura4_0_0__,
+        menus1_.id as id1_0_0__ 
+    from
+        restaurant restaurant0_ 
+    inner join
+        menu menus1_ 
+            on restaurant0_.id=menus1_.restaurant_id 
+    where
+        menus1_.date=CURRENT_DATE
+
+
+# Created at 2022-12-01T17:24:58.884
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.886
+Unexpected IOException with stream: MockHttpServletRequest:
+
+
+# Created at 2022-12-01T17:24:58.887
+Unexpected IOException with stream:       HTTP Method = GET
+
+
+# Created at 2022-12-01T17:24:58.889
+Unexpected IOException with stream:       Request URI = /v1/api/user/restaurants/today
+
+
+# Created at 2022-12-01T17:24:58.890
+Unexpected IOException with stream:        Parameters = {}
+
+
+# Created at 2022-12-01T17:24:58.891
+Unexpected IOException with stream:           Headers = []
+
+
+# Created at 2022-12-01T17:24:58.893
+Unexpected IOException with stream:              Body = null
+
+
+# Created at 2022-12-01T17:24:58.895
+Unexpected IOException with stream:     Session Attrs = {}
+
+
+# Created at 2022-12-01T17:24:58.897
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.928
+Unexpected IOException with stream: Handler:
+
+
+# Created at 2022-12-01T17:24:58.929
+Unexpected IOException with stream:              Type = ru.restaurant_voting.web.userControllers.UserRestaurantController
+
+
+# Created at 2022-12-01T17:24:58.930
+Unexpected IOException with stream:            Method = ru.restaurant_voting.web.userControllers.UserRestaurantController#getRestaurantTodayMenu()
+
+
+# Created at 2022-12-01T17:24:58.931
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.932
+Unexpected IOException with stream: Async:
+
+
+# Created at 2022-12-01T17:24:58.933
+Unexpected IOException with stream:     Async started = false
+
+
+# Created at 2022-12-01T17:24:58.934
+Unexpected IOException with stream:      Async result = null
+
+
+# Created at 2022-12-01T17:24:58.935
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.936
+Unexpected IOException with stream: Resolved Exception:
+
+
+# Created at 2022-12-01T17:24:58.937
+Unexpected IOException with stream:              Type = null
+
+
+# Created at 2022-12-01T17:24:58.939
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.940
+Unexpected IOException with stream: ModelAndView:
+
+
+# Created at 2022-12-01T17:24:58.941
+Unexpected IOException with stream:         View name = null
+
+
+# Created at 2022-12-01T17:24:58.943
+Unexpected IOException with stream:              View = null
+
+
+# Created at 2022-12-01T17:24:58.944
+Unexpected IOException with stream:             Model = null
+
+
+# Created at 2022-12-01T17:24:58.945
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.946
+Unexpected IOException with stream: FlashMap:
+
+
+# Created at 2022-12-01T17:24:58.947
+Unexpected IOException with stream:        Attributes = null
+
+
+# Created at 2022-12-01T17:24:58.948
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:58.949
+Unexpected IOException with stream: MockHttpServletResponse:
+
+
+# Created at 2022-12-01T17:24:58.950
+Unexpected IOException with stream:            Status = 200
+
+
+# Created at 2022-12-01T17:24:58.951
+Unexpected IOException with stream:     Error message = null
+
+
+# Created at 2022-12-01T17:24:58.952
+Unexpected IOException with stream:           Headers = [Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+
+
+# Created at 2022-12-01T17:24:58.953
+Unexpected IOException with stream:      Content type = application/json;charset=UTF-8
+
+
+# Created at 2022-12-01T17:24:58.954
+Unexpected IOException with stream:              Body = [{"id":1,"name":"Shaurma_na_Kazanskom","todayMenu":{"id":3,"date":"2022-12-01","meals":[{"title":"mealToDay","price":75},{"title":"meallToDay","price":330},{"title":"meallToDay","price":45}]}},{"id":2,"name":"Shaurma_na_Leningradskom1","todayMenu":{"id":5,"date":"2022-12-01","meals":[{"title":"mealToDay","price":34},{"title":"mealToDay","price":660},{"title":"mealToDay","price":760}]}},{"id":3,"name":"Shaurma_na_Leningradskom2","todayMenu":{"id":7,"date":"2022-12-01","meals":[{"title":"mealToDay","price":74},{"title":"mealToDay","price":34},{"title":"mealToDay","price":66},{"title":"mealToDay","price":760}]}}]
+
+
+# Created at 2022-12-01T17:24:58.955
+Unexpected IOException with stream:     Forwarded URL = null
+
+
+# Created at 2022-12-01T17:24:58.957
+Unexpected IOException with stream:    Redirected URL = null
+
+
+# Created at 2022-12-01T17:24:58.959
+Unexpected IOException with stream:           Cookies = []
+
+
+# Created at 2022-12-01T17:24:58.965
+Unexpected IOException: 6,1,ru.restaurant_voting.web.userController.UserRestaurantControllerTest,getRestaurantTodayMenu,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.967
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,ru.restaurant_voting.web.userController.UserRestaurantControllerTest,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.970
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,ru.restaurant_voting.web.userController.UserVoteControllerTest,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.992
+Unexpected IOException: 5,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,voteBeforeDeadlineAgainOrFirstlyToday,null,null,null
+
+
+# Created at 2022-12-01T17:24:58.997
+Unexpected IOException with stream: 2022-12-01 17:24:58.996 DEBUG 7536 --- [           main] r.r.config.WebSecurityConfig             : Authenticating 'user'
+
+
+# Created at 2022-12-01T17:24:59.000
+Unexpected IOException with stream: Hibernate: 
+    select
+        user0_.id as id1_3_,
+        user0_.login as login2_3_,
+        user0_.name as name3_3_,
+        user0_.password as password4_3_ 
+    from
+        users user0_ 
+    where
+        user0_.login=?
+
+
+# Created at 2022-12-01T17:24:59.004
+Unexpected IOException with stream: Hibernate: 
+    select
+        roles0_.user_id as user_id1_2_0_,
+        roles0_.role as role2_2_0_ 
+    from
+        user_roles roles0_ 
+    where
+        roles0_.user_id=?
+
+
+# Created at 2022-12-01T17:24:59.014
+Unexpected IOException with stream: Hibernate: 
+    select
+        restaurant0_.id as id1_1_0_,
+        restaurant0_.title as title2_1_0_,
+        menus1_.restaurant_id as restaura4_0_1_,
+        menus1_.id as id1_0_1_,
+        menus1_.id as id1_0_2_,
+        menus1_.date as date2_0_2_,
+        menus1_.meals as meals3_0_2_,
+        menus1_.restaurant_id as restaura4_0_2_ 
+    from
+        restaurant restaurant0_ 
+    left outer join
+        menu menus1_ 
+            on restaurant0_.id=menus1_.restaurant_id 
+    where
+        restaurant0_.id=?
+
+
+# Created at 2022-12-01T17:24:59.022
+Unexpected IOException with stream: Hibernate: 
+    select
+        vote0_.id as id1_4_,
+        vote0_.date as date2_4_,
+        vote0_.restaurant_id as restaura3_4_,
+        vote0_.user_id as user_id4_4_ 
+    from
+        vote vote0_ 
+    where
+        vote0_.user_id=? 
+        and vote0_.date=CURRENT_DATE
+
+
+# Created at 2022-12-01T17:24:59.025
+Unexpected IOException with stream: Hibernate: 
+    select
+        restaurant0_.id as id1_1_0_,
+        restaurant0_.title as title2_1_0_,
+        menus1_.restaurant_id as restaura4_0_1_,
+        menus1_.id as id1_0_1_,
+        menus1_.id as id1_0_2_,
+        menus1_.date as date2_0_2_,
+        menus1_.meals as meals3_0_2_,
+        menus1_.restaurant_id as restaura4_0_2_ 
+    from
+        restaurant restaurant0_ 
+    left outer join
+        menu menus1_ 
+            on restaurant0_.id=menus1_.restaurant_id 
+    where
+        restaurant0_.id=?
+
+
+# Created at 2022-12-01T17:24:59.030
+Unexpected IOException with stream: 2022-12-01 17:24:59.029  INFO 7536 --- [           main] r.r.w.u.UserVoteController               : Vote - user:1 restaurant:3
+
+
+# Created at 2022-12-01T17:24:59.045
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.046
+Unexpected IOException with stream: MockHttpServletRequest:
+
+
+# Created at 2022-12-01T17:24:59.047
+Unexpected IOException with stream:       HTTP Method = POST
+
+
+# Created at 2022-12-01T17:24:59.048
+Unexpected IOException with stream:       Request URI = /v1/api/user/votes/restaurant/3
+
+
+# Created at 2022-12-01T17:24:59.049
+Unexpected IOException with stream:        Parameters = {}
+
+
+# Created at 2022-12-01T17:24:59.051
+Unexpected IOException with stream:           Headers = [Content-Type:"application/json;charset=UTF-8"]
+
+
+# Created at 2022-12-01T17:24:59.052
+Unexpected IOException with stream:              Body = null
+
+
+# Created at 2022-12-01T17:24:59.053
+Unexpected IOException with stream:     Session Attrs = {}
+
+
+# Created at 2022-12-01T17:24:59.054
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.055
+Unexpected IOException with stream: Handler:
+
+
+# Created at 2022-12-01T17:24:59.056
+Unexpected IOException with stream:              Type = ru.restaurant_voting.web.userControllers.UserVoteController
+
+
+# Created at 2022-12-01T17:24:59.057
+Unexpected IOException with stream:            Method = ru.restaurant_voting.web.userControllers.UserVoteController#vote(int, AuthUser)
+
+
+# Created at 2022-12-01T17:24:59.058
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.059
+Unexpected IOException with stream: Async:
+
+
+# Created at 2022-12-01T17:24:59.060
+Unexpected IOException with stream:     Async started = false
+
+
+# Created at 2022-12-01T17:24:59.062
+Unexpected IOException with stream:      Async result = null
+
+
+# Created at 2022-12-01T17:24:59.062
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.064
+Unexpected IOException with stream: Resolved Exception:
+
+
+# Created at 2022-12-01T17:24:59.064
+Unexpected IOException with stream:              Type = null
+
+
+# Created at 2022-12-01T17:24:59.065
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.066
+Unexpected IOException with stream: ModelAndView:
+
+
+# Created at 2022-12-01T17:24:59.067
+Unexpected IOException with stream:         View name = null
+
+
+# Created at 2022-12-01T17:24:59.068
+Unexpected IOException with stream:              View = null
+
+
+# Created at 2022-12-01T17:24:59.069
+Unexpected IOException with stream:             Model = null
+
+
+# Created at 2022-12-01T17:24:59.070
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.071
+Unexpected IOException with stream: FlashMap:
+
+
+# Created at 2022-12-01T17:24:59.072
+Unexpected IOException with stream:        Attributes = null
+
+
+# Created at 2022-12-01T17:24:59.073
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.074
+Unexpected IOException with stream: MockHttpServletResponse:
+
+
+# Created at 2022-12-01T17:24:59.075
+Unexpected IOException with stream:            Status = 201
+
+
+# Created at 2022-12-01T17:24:59.076
+Unexpected IOException with stream:     Error message = null
+
+
+# Created at 2022-12-01T17:24:59.077
+Unexpected IOException with stream:           Headers = [Location:"http://localhost/v1/api/user/votes/restaurant/3", Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+
+
+# Created at 2022-12-01T17:24:59.079
+Unexpected IOException with stream:      Content type = application/json;charset=UTF-8
+
+
+# Created at 2022-12-01T17:24:59.080
+Unexpected IOException with stream:              Body = {"id":1,"restaurant":{"id":2,"title":"Shaurma_na_Leningradskom1","menus":[{"id":4,"date":"2022-08-25","meals":[{"title":"meal08_25","price":48},{"title":"meal08_25","price":780},{"title":"meal08_25","price":88},{"title":"meall08_254","price":740}]},{"id":5,"date":"2022-12-01","meals":[{"title":"mealToDay","price":34},{"title":"mealToDay","price":660},{"title":"mealToDay","price":760}]}]},"date":"2022-12-01"}
+
+
+# Created at 2022-12-01T17:24:59.082
+Unexpected IOException with stream:     Forwarded URL = null
+
+
+# Created at 2022-12-01T17:24:59.083
+Unexpected IOException with stream:    Redirected URL = http://localhost/v1/api/user/votes/restaurant/3
+
+
+# Created at 2022-12-01T17:24:59.085
+Unexpected IOException with stream:           Cookies = []
+
+
+# Created at 2022-12-01T17:24:59.090
+Unexpected IOException: 6,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,voteBeforeDeadlineAgainOrFirstlyToday,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.093
+Unexpected IOException: 5,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,getUserVoteForToday,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.097
+Unexpected IOException with stream: 2022-12-01 17:24:59.096 DEBUG 7536 --- [           main] r.r.config.WebSecurityConfig             : Authenticating 'user'
+
+
+# Created at 2022-12-01T17:24:59.099
+Unexpected IOException with stream: Hibernate: 
+    select
+        user0_.id as id1_3_,
+        user0_.login as login2_3_,
+        user0_.name as name3_3_,
+        user0_.password as password4_3_ 
+    from
+        users user0_ 
+    where
+        user0_.login=?
+
+
+# Created at 2022-12-01T17:24:59.101
+Unexpected IOException with stream: Hibernate: 
+    select
+        roles0_.user_id as user_id1_2_0_,
+        roles0_.role as role2_2_0_ 
+    from
+        user_roles roles0_ 
+    where
+        roles0_.user_id=?
+
+
+# Created at 2022-12-01T17:24:59.108
+Unexpected IOException with stream: 2022-12-01 17:24:59.107  INFO 7536 --- [           main] r.r.w.u.UserVoteController               : getUserVoteForToday - user:1
+
+
+# Created at 2022-12-01T17:24:59.111
+Unexpected IOException with stream: Hibernate: 
+    select
+        vote0_.id as id1_4_,
+        vote0_.date as date2_4_,
+        vote0_.restaurant_id as restaura3_4_,
+        vote0_.user_id as user_id4_4_ 
+    from
+        vote vote0_ 
+    where
+        vote0_.user_id=? 
+        and vote0_.date=CURRENT_DATE
+
+
+# Created at 2022-12-01T17:24:59.114
+Unexpected IOException with stream: Hibernate: 
+    select
+        restaurant0_.id as id1_1_0_,
+        restaurant0_.title as title2_1_0_,
+        menus1_.restaurant_id as restaura4_0_1_,
+        menus1_.id as id1_0_1_,
+        menus1_.id as id1_0_2_,
+        menus1_.date as date2_0_2_,
+        menus1_.meals as meals3_0_2_,
+        menus1_.restaurant_id as restaura4_0_2_ 
+    from
+        restaurant restaurant0_ 
+    left outer join
+        menu menus1_ 
+            on restaurant0_.id=menus1_.restaurant_id 
+    where
+        restaurant0_.id=?
+
+
+# Created at 2022-12-01T17:24:59.125
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.127
+Unexpected IOException with stream: MockHttpServletRequest:
+
+
+# Created at 2022-12-01T17:24:59.128
+Unexpected IOException with stream:       HTTP Method = GET
+
+
+# Created at 2022-12-01T17:24:59.130
+Unexpected IOException with stream:       Request URI = /v1/api/user/votes
+
+
+# Created at 2022-12-01T17:24:59.132
+Unexpected IOException with stream:        Parameters = {}
+
+
+# Created at 2022-12-01T17:24:59.133
+Unexpected IOException with stream:           Headers = []
+
+
+# Created at 2022-12-01T17:24:59.135
+Unexpected IOException with stream:              Body = null
+
+
+# Created at 2022-12-01T17:24:59.136
+Unexpected IOException with stream:     Session Attrs = {}
+
+
+# Created at 2022-12-01T17:24:59.137
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.139
+Unexpected IOException with stream: Handler:
+
+
+# Created at 2022-12-01T17:24:59.140
+Unexpected IOException with stream:              Type = ru.restaurant_voting.web.userControllers.UserVoteController
+
+
+# Created at 2022-12-01T17:24:59.141
+Unexpected IOException with stream:            Method = ru.restaurant_voting.web.userControllers.UserVoteController#getTodayVoteForUser(AuthUser)
+
+
+# Created at 2022-12-01T17:24:59.142
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.144
+Unexpected IOException with stream: Async:
+
+
+# Created at 2022-12-01T17:24:59.146
+Unexpected IOException with stream:     Async started = false
+
+
+# Created at 2022-12-01T17:24:59.148
+Unexpected IOException with stream:      Async result = null
+
+
+# Created at 2022-12-01T17:24:59.149
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.151
+Unexpected IOException with stream: Resolved Exception:
+
+
+# Created at 2022-12-01T17:24:59.152
+Unexpected IOException with stream:              Type = null
+
+
+# Created at 2022-12-01T17:24:59.154
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.156
+Unexpected IOException with stream: ModelAndView:
+
+
+# Created at 2022-12-01T17:24:59.160
+Unexpected IOException with stream:         View name = null
+
+
+# Created at 2022-12-01T17:24:59.162
+Unexpected IOException with stream:              View = null
+
+
+# Created at 2022-12-01T17:24:59.164
+Unexpected IOException with stream:             Model = null
+
+
+# Created at 2022-12-01T17:24:59.165
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.168
+Unexpected IOException with stream: FlashMap:
+
+
+# Created at 2022-12-01T17:24:59.170
+Unexpected IOException with stream:        Attributes = null
+
+
+# Created at 2022-12-01T17:24:59.172
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.174
+Unexpected IOException with stream: MockHttpServletResponse:
+
+
+# Created at 2022-12-01T17:24:59.176
+Unexpected IOException with stream:            Status = 200
+
+
+# Created at 2022-12-01T17:24:59.180
+Unexpected IOException with stream:     Error message = null
+
+
+# Created at 2022-12-01T17:24:59.182
+Unexpected IOException with stream:           Headers = [Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+
+
+# Created at 2022-12-01T17:24:59.184
+Unexpected IOException with stream:      Content type = application/json;charset=UTF-8
+
+
+# Created at 2022-12-01T17:24:59.187
+Unexpected IOException with stream:              Body = {"id":1,"restaurant":{"id":2,"title":"Shaurma_na_Leningradskom1","menus":[{"id":4,"date":"2022-08-25","meals":[{"title":"meal08_25","price":48},{"title":"meal08_25","price":780},{"title":"meal08_25","price":88},{"title":"meall08_254","price":740}]},{"id":5,"date":"2022-12-01","meals":[{"title":"mealToDay","price":34},{"title":"mealToDay","price":660},{"title":"mealToDay","price":760}]}]},"date":"2022-12-01"}
+
+
+# Created at 2022-12-01T17:24:59.188
+Unexpected IOException with stream:     Forwarded URL = null
+
+
+# Created at 2022-12-01T17:24:59.190
+Unexpected IOException with stream:    Redirected URL = null
+
+
+# Created at 2022-12-01T17:24:59.191
+Unexpected IOException with stream:           Cookies = []
+
+
+# Created at 2022-12-01T17:24:59.197
+Unexpected IOException with stream: Hibernate: 
+    select
+        vote0_.id as id1_4_,
+        vote0_.date as date2_4_,
+        vote0_.restaurant_id as restaura3_4_,
+        vote0_.user_id as user_id4_4_ 
+    from
+        vote vote0_ 
+    where
+        vote0_.user_id=? 
+        and vote0_.date=CURRENT_DATE
+
+
+# Created at 2022-12-01T17:24:59.216
+Unexpected IOException: 6,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,getUserVoteForToday,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.219
+Unexpected IOException: 5,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,voteAfterDeadlineAgainToday,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.226
+Unexpected IOException with stream: 2022-12-01 17:24:59.224 DEBUG 7536 --- [           main] r.r.config.WebSecurityConfig             : Authenticating 'user'
+
+
+# Created at 2022-12-01T17:24:59.228
+Unexpected IOException with stream: Hibernate: 
+    select
+        user0_.id as id1_3_,
+        user0_.login as login2_3_,
+        user0_.name as name3_3_,
+        user0_.password as password4_3_ 
+    from
+        users user0_ 
+    where
+        user0_.login=?
+
+
+# Created at 2022-12-01T17:24:59.231
+Unexpected IOException with stream: Hibernate: 
+    select
+        roles0_.user_id as user_id1_2_0_,
+        roles0_.role as role2_2_0_ 
+    from
+        user_roles roles0_ 
+    where
+        roles0_.user_id=?
+
+
+# Created at 2022-12-01T17:24:59.275
+Unexpected IOException with stream: Hibernate: 
+    select
+        restaurant0_.id as id1_1_0_,
+        restaurant0_.title as title2_1_0_,
+        menus1_.restaurant_id as restaura4_0_1_,
+        menus1_.id as id1_0_1_,
+        menus1_.id as id1_0_2_,
+        menus1_.date as date2_0_2_,
+        menus1_.meals as meals3_0_2_,
+        menus1_.restaurant_id as restaura4_0_2_ 
+    from
+        restaurant restaurant0_ 
+    left outer join
+        menu menus1_ 
+            on restaurant0_.id=menus1_.restaurant_id 
+    where
+        restaurant0_.id=?
+
+
+# Created at 2022-12-01T17:24:59.282
+Unexpected IOException with stream: Hibernate: 
+    select
+        vote0_.id as id1_4_,
+        vote0_.date as date2_4_,
+        vote0_.restaurant_id as restaura3_4_,
+        vote0_.user_id as user_id4_4_ 
+    from
+        vote vote0_ 
+    where
+        vote0_.user_id=? 
+        and vote0_.date=CURRENT_DATE
+
+
+# Created at 2022-12-01T17:24:59.286
+Unexpected IOException with stream: Hibernate: 
+    select
+        restaurant0_.id as id1_1_0_,
+        restaurant0_.title as title2_1_0_,
+        menus1_.restaurant_id as restaura4_0_1_,
+        menus1_.id as id1_0_1_,
+        menus1_.id as id1_0_2_,
+        menus1_.date as date2_0_2_,
+        menus1_.meals as meals3_0_2_,
+        menus1_.restaurant_id as restaura4_0_2_ 
+    from
+        restaurant restaurant0_ 
+    left outer join
+        menu menus1_ 
+            on restaurant0_.id=menus1_.restaurant_id 
+    where
+        restaurant0_.id=?
+
+
+# Created at 2022-12-01T17:24:59.290
+Unexpected IOException with stream: 2022-12-01 17:24:59.289  INFO 7536 --- [           main] r.restaurant_voting.service.VoteService  : User want change self voice after deadline - user:1
+
+
+# Created at 2022-12-01T17:24:59.296
+Unexpected IOException with stream: 2022-12-01 17:24:59.294 ERROR 7536 --- [           main] r.r.error.MyExceptionHandler             : ApplicationException: You cannot vote or change self vote after 11:00
+
+
+# Created at 2022-12-01T17:24:59.317
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.319
+Unexpected IOException with stream: MockHttpServletRequest:
+
+
+# Created at 2022-12-01T17:24:59.320
+Unexpected IOException with stream:       HTTP Method = POST
+
+
+# Created at 2022-12-01T17:24:59.322
+Unexpected IOException with stream:       Request URI = /v1/api/user/votes/restaurant/3
+
+
+# Created at 2022-12-01T17:24:59.323
+Unexpected IOException with stream:        Parameters = {}
+
+
+# Created at 2022-12-01T17:24:59.324
+Unexpected IOException with stream:           Headers = [Content-Type:"application/json;charset=UTF-8"]
+
+
+# Created at 2022-12-01T17:24:59.325
+Unexpected IOException with stream:              Body = null
+
+
+# Created at 2022-12-01T17:24:59.330
+Unexpected IOException with stream:     Session Attrs = {}
+
+
+# Created at 2022-12-01T17:24:59.332
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.335
+Unexpected IOException with stream: Handler:
+
+
+# Created at 2022-12-01T17:24:59.337
+Unexpected IOException with stream:              Type = ru.restaurant_voting.web.userControllers.UserVoteController
+
+
+# Created at 2022-12-01T17:24:59.338
+Unexpected IOException with stream:            Method = ru.restaurant_voting.web.userControllers.UserVoteController#vote(int, AuthUser)
+
+
+# Created at 2022-12-01T17:24:59.340
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.341
+Unexpected IOException with stream: Async:
+
+
+# Created at 2022-12-01T17:24:59.343
+Unexpected IOException with stream:     Async started = false
+
+
+# Created at 2022-12-01T17:24:59.345
+Unexpected IOException with stream:      Async result = null
+
+
+# Created at 2022-12-01T17:24:59.347
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.349
+Unexpected IOException with stream: Resolved Exception:
+
+
+# Created at 2022-12-01T17:24:59.351
+Unexpected IOException with stream:              Type = ru.restaurant_voting.error.DeadLineRuntimeEx
+
+
+# Created at 2022-12-01T17:24:59.353
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.354
+Unexpected IOException with stream: ModelAndView:
+
+
+# Created at 2022-12-01T17:24:59.356
+Unexpected IOException with stream:         View name = null
+
+
+# Created at 2022-12-01T17:24:59.357
+Unexpected IOException with stream:              View = null
+
+
+# Created at 2022-12-01T17:24:59.358
+Unexpected IOException with stream:             Model = null
+
+
+# Created at 2022-12-01T17:24:59.360
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.361
+Unexpected IOException with stream: FlashMap:
+
+
+# Created at 2022-12-01T17:24:59.362
+Unexpected IOException with stream:        Attributes = null
+
+
+# Created at 2022-12-01T17:24:59.363
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.364
+Unexpected IOException with stream: MockHttpServletResponse:
+
+
+# Created at 2022-12-01T17:24:59.366
+Unexpected IOException with stream:            Status = 409
+
+
+# Created at 2022-12-01T17:24:59.367
+Unexpected IOException with stream:     Error message = null
+
+
+# Created at 2022-12-01T17:24:59.368
+Unexpected IOException with stream:           Headers = [Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+
+
+# Created at 2022-12-01T17:24:59.370
+Unexpected IOException with stream:      Content type = application/json;charset=UTF-8
+
+
+# Created at 2022-12-01T17:24:59.371
+Unexpected IOException with stream:              Body = {"timestamp":"2022-12-01T14:24:59.298+00:00","status":409,"error":"Conflict","message":"You cannot vote or change self vote after 11:00"}
+
+
+# Created at 2022-12-01T17:24:59.372
+Unexpected IOException with stream:     Forwarded URL = null
+
+
+# Created at 2022-12-01T17:24:59.373
+Unexpected IOException with stream:    Redirected URL = null
+
+
+# Created at 2022-12-01T17:24:59.374
+Unexpected IOException with stream:           Cookies = []
+
+
+# Created at 2022-12-01T17:24:59.382
+Unexpected IOException: 6,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,voteAfterDeadlineAgainToday,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.385
+Unexpected IOException: 5,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,voteForNonExistent,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.390
+Unexpected IOException with stream: 2022-12-01 17:24:59.388 DEBUG 7536 --- [           main] r.r.config.WebSecurityConfig             : Authenticating 'user'
+
+
+# Created at 2022-12-01T17:24:59.392
+Unexpected IOException with stream: Hibernate: 
+    select
+        user0_.id as id1_3_,
+        user0_.login as login2_3_,
+        user0_.name as name3_3_,
+        user0_.password as password4_3_ 
+    from
+        users user0_ 
+    where
+        user0_.login=?
+
+
+# Created at 2022-12-01T17:24:59.395
+Unexpected IOException with stream: Hibernate: 
+    select
+        roles0_.user_id as user_id1_2_0_,
+        roles0_.role as role2_2_0_ 
+    from
+        user_roles roles0_ 
+    where
+        roles0_.user_id=?
+
+
+# Created at 2022-12-01T17:24:59.402
+Unexpected IOException with stream: Hibernate: 
+    select
+        restaurant0_.id as id1_1_0_,
+        restaurant0_.title as title2_1_0_,
+        menus1_.restaurant_id as restaura4_0_1_,
+        menus1_.id as id1_0_1_,
+        menus1_.id as id1_0_2_,
+        menus1_.date as date2_0_2_,
+        menus1_.meals as meals3_0_2_,
+        menus1_.restaurant_id as restaura4_0_2_ 
+    from
+        restaurant restaurant0_ 
+    left outer join
+        menu menus1_ 
+            on restaurant0_.id=menus1_.restaurant_id 
+    where
+        restaurant0_.id=?
+
+
+# Created at 2022-12-01T17:24:59.405
+Unexpected IOException with stream: 2022-12-01 17:24:59.404 ERROR 7536 --- [           main] r.r.error.MyExceptionHandler             : EntityNotFoundException: Restaurant with such id not present
+
+
+# Created at 2022-12-01T17:24:59.410
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.412
+Unexpected IOException with stream: MockHttpServletRequest:
+
+
+# Created at 2022-12-01T17:24:59.413
+Unexpected IOException with stream:       HTTP Method = POST
+
+
+# Created at 2022-12-01T17:24:59.415
+Unexpected IOException with stream:       Request URI = /v1/api/user/votes/restaurant/0
+
+
+# Created at 2022-12-01T17:24:59.416
+Unexpected IOException with stream:        Parameters = {}
+
+
+# Created at 2022-12-01T17:24:59.418
+Unexpected IOException with stream:           Headers = [Content-Type:"application/json;charset=UTF-8"]
+
+
+# Created at 2022-12-01T17:24:59.419
+Unexpected IOException with stream:              Body = null
+
+
+# Created at 2022-12-01T17:24:59.424
+Unexpected IOException with stream:     Session Attrs = {}
+
+
+# Created at 2022-12-01T17:24:59.425
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.426
+Unexpected IOException with stream: Handler:
+
+
+# Created at 2022-12-01T17:24:59.428
+Unexpected IOException with stream:              Type = ru.restaurant_voting.web.userControllers.UserVoteController
+
+
+# Created at 2022-12-01T17:24:59.429
+Unexpected IOException with stream:            Method = ru.restaurant_voting.web.userControllers.UserVoteController#vote(int, AuthUser)
+
+
+# Created at 2022-12-01T17:24:59.431
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.432
+Unexpected IOException with stream: Async:
+
+
+# Created at 2022-12-01T17:24:59.433
+Unexpected IOException with stream:     Async started = false
+
+
+# Created at 2022-12-01T17:24:59.434
+Unexpected IOException with stream:      Async result = null
+
+
+# Created at 2022-12-01T17:24:59.435
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.436
+Unexpected IOException with stream: Resolved Exception:
+
+
+# Created at 2022-12-01T17:24:59.437
+Unexpected IOException with stream:              Type = javax.persistence.EntityNotFoundException
+
+
+# Created at 2022-12-01T17:24:59.438
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.440
+Unexpected IOException with stream: ModelAndView:
+
+
+# Created at 2022-12-01T17:24:59.441
+Unexpected IOException with stream:         View name = null
+
+
+# Created at 2022-12-01T17:24:59.443
+Unexpected IOException with stream:              View = null
+
+
+# Created at 2022-12-01T17:24:59.444
+Unexpected IOException with stream:             Model = null
+
+
+# Created at 2022-12-01T17:24:59.446
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.447
+Unexpected IOException with stream: FlashMap:
+
+
+# Created at 2022-12-01T17:24:59.448
+Unexpected IOException with stream:        Attributes = null
+
+
+# Created at 2022-12-01T17:24:59.449
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.450
+Unexpected IOException with stream: MockHttpServletResponse:
+
+
+# Created at 2022-12-01T17:24:59.451
+Unexpected IOException with stream:            Status = 404
+
+
+# Created at 2022-12-01T17:24:59.452
+Unexpected IOException with stream:     Error message = null
+
+
+# Created at 2022-12-01T17:24:59.453
+Unexpected IOException with stream:           Headers = [Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+
+
+# Created at 2022-12-01T17:24:59.454
+Unexpected IOException with stream:      Content type = application/json;charset=UTF-8
+
+
+# Created at 2022-12-01T17:24:59.455
+Unexpected IOException with stream:              Body = {"timestamp":"2022-12-01T14:24:59.406+00:00","status":404,"error":"Not Found","message":"Restaurant with such id not present"}
+
+
+# Created at 2022-12-01T17:24:59.456
+Unexpected IOException with stream:     Forwarded URL = null
+
+
+# Created at 2022-12-01T17:24:59.458
+Unexpected IOException with stream:    Redirected URL = null
+
+
+# Created at 2022-12-01T17:24:59.459
+Unexpected IOException with stream:           Cookies = []
+
+
+# Created at 2022-12-01T17:24:59.464
+Unexpected IOException: 6,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,voteForNonExistent,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.467
+Unexpected IOException: 5,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,getUserVoteForTodayUnauthorized,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.473
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.474
+Unexpected IOException with stream: MockHttpServletRequest:
+
+
+# Created at 2022-12-01T17:24:59.476
+Unexpected IOException with stream:       HTTP Method = GET
+
+
+# Created at 2022-12-01T17:24:59.477
+Unexpected IOException with stream:       Request URI = /v1/api/user/votes
+
+
+# Created at 2022-12-01T17:24:59.478
+Unexpected IOException with stream:        Parameters = {}
+
+
+# Created at 2022-12-01T17:24:59.485
+Unexpected IOException with stream:           Headers = []
+
+
+# Created at 2022-12-01T17:24:59.487
+Unexpected IOException with stream:              Body = null
+
+
+# Created at 2022-12-01T17:24:59.489
+Unexpected IOException with stream:     Session Attrs = {}
+
+
+# Created at 2022-12-01T17:24:59.490
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.497
+Unexpected IOException with stream: Handler:
+
+
+# Created at 2022-12-01T17:24:59.501
+Unexpected IOException with stream:              Type = null
+
+
+# Created at 2022-12-01T17:24:59.513
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.515
+Unexpected IOException with stream: Async:
+
+
+# Created at 2022-12-01T17:24:59.516
+Unexpected IOException with stream:     Async started = false
+
+
+# Created at 2022-12-01T17:24:59.517
+Unexpected IOException with stream:      Async result = null
+
+
+# Created at 2022-12-01T17:24:59.519
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.520
+Unexpected IOException with stream: Resolved Exception:
+
+
+# Created at 2022-12-01T17:24:59.522
+Unexpected IOException with stream:              Type = null
+
+
+# Created at 2022-12-01T17:24:59.523
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.527
+Unexpected IOException with stream: ModelAndView:
+
+
+# Created at 2022-12-01T17:24:59.529
+Unexpected IOException with stream:         View name = null
+
+
+# Created at 2022-12-01T17:24:59.531
+Unexpected IOException with stream:              View = null
+
+
+# Created at 2022-12-01T17:24:59.533
+Unexpected IOException with stream:             Model = null
+
+
+# Created at 2022-12-01T17:24:59.534
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.535
+Unexpected IOException with stream: FlashMap:
+
+
+# Created at 2022-12-01T17:24:59.537
+Unexpected IOException with stream:        Attributes = null
+
+
+# Created at 2022-12-01T17:24:59.538
+Unexpected IOException with stream: 
+
+
+# Created at 2022-12-01T17:24:59.539
+Unexpected IOException with stream: MockHttpServletResponse:
+
+
+# Created at 2022-12-01T17:24:59.541
+Unexpected IOException with stream:            Status = 401
+
+
+# Created at 2022-12-01T17:24:59.544
+Unexpected IOException with stream:     Error message = Unauthorized
+
+
+# Created at 2022-12-01T17:24:59.546
+Unexpected IOException with stream:           Headers = [WWW-Authenticate:"Basic realm="Realm"", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+
+
+# Created at 2022-12-01T17:24:59.547
+Unexpected IOException with stream:      Content type = null
+
+
+# Created at 2022-12-01T17:24:59.549
+Unexpected IOException with stream:              Body = 
+
+
+# Created at 2022-12-01T17:24:59.550
+Unexpected IOException with stream:     Forwarded URL = null
+
+
+# Created at 2022-12-01T17:24:59.552
+Unexpected IOException with stream:    Redirected URL = null
+
+
+# Created at 2022-12-01T17:24:59.553
+Unexpected IOException with stream:           Cookies = []
+
+
+# Created at 2022-12-01T17:24:59.559
+Unexpected IOException: 6,1,ru.restaurant_voting.web.userController.UserVoteControllerTest,getUserVoteForTodayUnauthorized,null,null,null
+
+
+# Created at 2022-12-01T17:24:59.561
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,ru.restaurant_voting.web.userController.UserVoteControllerTest,null,null,null
+
+

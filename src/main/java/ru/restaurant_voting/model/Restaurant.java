@@ -25,6 +25,7 @@ import java.util.List;
 @Table(name = "restaurant")
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class Restaurant extends BaseEntity {
 
     @Length(min = 2, max = 128)
@@ -36,8 +37,7 @@ public class Restaurant extends BaseEntity {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
     @JsonManagedReference
     @OnDelete(action = OnDeleteAction.CASCADE)
-    //  @Schema(accessMode = Schema.AccessMode.READ_ONLY)
-    // @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+
     private List<Menu> menus = new ArrayList<>();
 
 

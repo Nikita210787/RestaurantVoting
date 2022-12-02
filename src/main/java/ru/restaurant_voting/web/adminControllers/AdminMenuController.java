@@ -25,12 +25,12 @@ import static ru.restaurant_voting.util.RestaurantUtil.checkExistRestaurantById;
 import static ru.restaurant_voting.util.ValidationUtil.assureIdConsistent;
 
 @RestController
-@RequestMapping(value = AdminMenuController.URL, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = AdminMenuController.URL_ADMIN_MENU_CONTROLLER, produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Admin menu Controller ")
 public class AdminMenuController {
-    static final String URL = "/v1/api/admin/menus";
+    static final String URL_ADMIN_MENU_CONTROLLER = "/v1/api/admin/menus";
     MenuRepository menuRepository;
     RestaurantRepository restaurantRepository;
     MenuService menuService;
@@ -54,7 +54,7 @@ public class AdminMenuController {
     }
 
     /**
-     * add Menu to restaurant
+     * Add Menu to restaurant by restaurant id
      */
     @PostMapping(value = "/restaurant/{restaurantId}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
@@ -64,6 +64,7 @@ public class AdminMenuController {
         menu.setRestaurant(restaurantRepository.getReferenceById(restaurantId));
         log.info("Add  new menu {} for restaurant {}", menu, restaurantId);
         return ResponseEntity.ok(menuRepository.save(menu));
+
     }
 
     /**

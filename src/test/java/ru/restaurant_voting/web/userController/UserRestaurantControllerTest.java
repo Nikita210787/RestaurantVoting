@@ -11,6 +11,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.restaurant_voting.util.RestaurantUtil.getTOsIncludeMenu;
 import static ru.restaurant_voting.web.testData.RestaurantTestData.RESTAURANT_TO_MATCHER;
+import static ru.restaurant_voting.web.testData.UserTestData.USER_LOGIN;
 import static ru.restaurant_voting.web.userControllers.UserRestaurantController.RESTAURANT_URL;
 
 
@@ -19,12 +20,16 @@ class UserRestaurantControllerTest extends AbstractControllerTest {
     @Autowired
     RestaurantRepository restaurantRepository;
 
+    /**
+     * @return All Restaurants with menu for today
+     */
     @Test
-    @WithUserDetails(value = "user")
+    @WithUserDetails(value = USER_LOGIN)
     void getRestaurantTodayMenu() throws Exception {
         perform(MockMvcRequestBuilders.get(RESTAURANT_URL + "/today"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(RESTAURANT_TO_MATCHER.contentJson(getTOsIncludeMenu(restaurantRepository.getAllRestaurantWithTodayMenu()))).andDo(print());
+                .andExpect(RESTAURANT_TO_MATCHER.contentJson(getTOsIncludeMenu(restaurantRepository.getAllRestaurantWithTodayMenu())))
+                .andDo(print());
     }
 }

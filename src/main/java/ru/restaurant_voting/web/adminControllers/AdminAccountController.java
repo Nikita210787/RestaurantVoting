@@ -19,12 +19,12 @@ import javax.validation.Valid;
 import java.util.Set;
 
 @RestController
-@RequestMapping(value = AdminAccountController.URL, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = AdminAccountController.URL_ADMIN_ACCOUNT, produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Admin account Controller")
 public class AdminAccountController {
-    static final String URL = "/v1/api/admin/account";
+    public static final String URL_ADMIN_ACCOUNT = "/v1/api/admin/account";
 
     UserRepository userRepository;
 

@@ -2,8 +2,6 @@ package ru.restaurant_voting.web.testData;
 
 import ru.restaurant_voting.model.Vote;
 import ru.restaurant_voting.web.MatcherFactory;
-import ru.restaurant_voting.model.Vote;
-import ru.restaurant_voting.web.MatcherFactory;
 
 public class VoteTestData {
 

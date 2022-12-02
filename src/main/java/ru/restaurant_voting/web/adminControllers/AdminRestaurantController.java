@@ -19,12 +19,12 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = AdminRestaurantController.URL, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = AdminRestaurantController.URL_ADMIN_RESTAURANT_CONTROLLER, produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 @Slf4j
 @Tag(name = "Admin restaurant Controller ")
 public class AdminRestaurantController {
-    static final String URL = "/v1/api/admin/restaurants";
+    public static final String URL_ADMIN_RESTAURANT_CONTROLLER = "/v1/api/admin/restaurants";
     RestaurantRepository restaurantRepository;
 
     /**
@@ -51,11 +51,10 @@ public class AdminRestaurantController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<Restaurant> createRestaurantWithoutMenu(@Valid @RequestBody Restaurant restaurant) {
-
         log.info("Admin add new Restaurant {}", restaurant);
         ValidationUtil.checkNew(restaurant);
         Restaurant createdRestaurant = restaurantRepository.save(restaurant);
-        return ResponseEntity.ok(createdRestaurant);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdRestaurant);
     }
 
     /**
@@ -75,7 +74,7 @@ public class AdminRestaurantController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateTitle(@RequestBody Restaurant restaurant, @PathVariable int id) {
         log.info("update restaurant id {}", id);
-        Restaurant restaurantForUpdate = restaurantRepository.getByID(id).orElseThrow(//!!!!!!!!!!!!!!!!!!!!1
+        Restaurant restaurantForUpdate = restaurantRepository.getByID(id).orElseThrow(
                 () -> new IllegalRequestDataException("Restaurant with specified ID does not exist"));
         if (restaurant.isNew()) restaurantForUpdate.setId(id);
         else if (restaurant.id() != restaurantForUpdate.getId())

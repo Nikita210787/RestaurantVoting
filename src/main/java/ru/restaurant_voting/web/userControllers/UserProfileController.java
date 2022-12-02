@@ -15,7 +15,6 @@ import ru.restaurant_voting.repository.UserRepository;
 import ru.restaurant_voting.util.ValidationUtil;
 import ru.restaurant_voting.web.AuthUser;
 
-import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.Set;

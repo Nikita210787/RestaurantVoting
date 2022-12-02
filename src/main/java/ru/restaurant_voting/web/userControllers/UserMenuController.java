@@ -17,11 +17,11 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping(UserMenuController.URL)
+@RequestMapping(UserMenuController.URL_USER_MENU_CONTROLLER)
 @AllArgsConstructor
 @Tag(name = "User Menu Controller")
 public class UserMenuController {
-    static final String URL = "/v1/api/user/menus";
+    public static final String URL_USER_MENU_CONTROLLER = "/v1/api/user/menus";
 
     MenuRepository menuRepository;
     RestaurantRepository restaurantRepository;

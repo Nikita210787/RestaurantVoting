@@ -23,4 +23,10 @@ public interface MenuRepository extends BaseEntityRepository<Menu> {
      **/
 
     List<Menu> getMenusByDate(LocalDate localDate);
+    /**
+     *
+     * @param restaurantId
+     * @return List menu restaurant by id
+     */
+    List<Menu> getMenusByRestaurantId(int restaurantId);
 }

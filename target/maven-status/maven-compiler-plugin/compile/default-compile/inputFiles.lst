@@ -2,7 +2,6 @@ C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\mo
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\web\adminControllers\AdminAccountController.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\service\VoteService.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\converter\MealsDBConverter.java
-C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\error\AppExceptionHandler.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\repository\RestaurantRepository.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\web\userControllers\UserVoteController.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\util\ValidationUtil.java
@@ -14,10 +13,12 @@ C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\re
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\util\RestaurantUtil.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\dto\RestaurantIncludeMenu.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\web\userControllers\UserRestaurantController.java
+C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\error\MyExceptionHandler.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\util\MenuUtil.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\model\BaseEntity.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\util\JsonDeserializers.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\repository\UserRepository.java
+C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\error\DeadLineRuntimeEx.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\web\userControllers\UserProfileController.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\web\adminControllers\AdminRestaurantController.java
 C:\Users\Nik\IdeaProjects\RestaurantVoting\src\main\java\ru\restaurant_voting\web\adminControllers\AdminMenuController.java
