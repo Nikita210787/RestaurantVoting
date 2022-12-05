@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.webjars.NotFoundException;
 import ru.restaurant_voting.model.Vote;
 import ru.restaurant_voting.repository.RestaurantRepository;
 import ru.restaurant_voting.repository.VoteRepository;
@@ -34,9 +35,11 @@ public class UserVoteController {
      * @return vote authorized user for today
      */
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<Vote> getTodayVoteForUser(@AuthenticationPrincipal AuthUser authUser) {
+    ResponseEntity<Integer> getTodayVoteForUser(@AuthenticationPrincipal AuthUser authUser) {
         log.info("getUserVoteForToday - user:{}", authUser.id());
-        return ResponseEntity.of(voteRepository.getTodayVoteForUser(authUser.getUser()));
+        Vote vote = voteRepository.getTodayVoteForUser(authUser.getUser()).orElseThrow(()->new NotFoundException("The authenticated user is nit vote today"));
+        System.out.println(vote);
+        return ResponseEntity.ok((Integer) vote.getRestaurant().id());
     }
 
     /**

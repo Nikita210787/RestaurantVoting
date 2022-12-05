@@ -29,7 +29,7 @@ public class Vote extends BaseEntity {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "restaurant_id", nullable = false)
     @NotNull
-    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+   // @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Restaurant restaurant;
 
     @Column(nullable = false, columnDefinition = "date default CURRENT_DATE()")

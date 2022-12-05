@@ -20,6 +20,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.restaurant_voting.web.testData.UserTestData.USER_ID;
 import static ru.restaurant_voting.web.testData.VoteTestData.*;
@@ -45,8 +46,7 @@ class UserVoteControllerTest extends AbstractControllerTest {
         perform(MockMvcRequestBuilders.get(URL_VOTES))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(VOTE_MATCHER.contentJson(voteRepository.getTodayVoteForUser(
-                        userRepository.getReferenceById(USER_ID)).orElse(null)));
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
     }
 
     @Test

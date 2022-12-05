@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.adminControllers;
+package ru.restaurant_voting.web.adminControllers.adminRestaurantController.AdminMenuController;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -16,7 +16,6 @@ import ru.restaurant_voting.repository.RestaurantRepository;
 import ru.restaurant_voting.service.MenuService;
 import ru.restaurant_voting.util.ValidationUtil;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,28 +29,10 @@ import static ru.restaurant_voting.util.ValidationUtil.assureIdConsistent;
 @Slf4j
 @Tag(name = "Admin menu Controller ")
 public class AdminMenuController {
-    static final String URL_ADMIN_MENU_CONTROLLER = "/v1/api/admin/menus";
+    public static final String URL_ADMIN_MENU_CONTROLLER = "/v1/api/admin/menus";
     MenuRepository menuRepository;
     RestaurantRepository restaurantRepository;
     MenuService menuService;
-
-    /**
-     * @return All Menu with restaurant id for today
-     */
-    @GetMapping(value = "/today", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<Menu> getAllMenusWithRestaurantIdForToday() {
-        log.info("getAllMenuForToday");
-        return menuRepository.getMenusByDate(LocalDate.now());
-    }
-
-    /**
-     * @return Today Menu by restaurant Id
-     */
-    @GetMapping(value = "/restaurant/{id}")
-    List<Menu> getTodayMenuByRestaurantId(@PathVariable int id) {
-        log.info("getAll Menu in Restaurant Id :{}", id);
-        return menuRepository.getMenuByRestaurantIdAndDate(id, LocalDate.now());
-    }
 
     /**
      * Add Menu to restaurant by restaurant id

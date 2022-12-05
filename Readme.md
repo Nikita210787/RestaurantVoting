@@ -1,4 +1,4 @@
-## Application:
+# Application:
 Voting system (Backend) for deciding where to have lunch
 
 2 types of users: admin and regular users
@@ -24,15 +24,14 @@ Each restaurant provides a new menu each day.
 - Swagger/OpenAPI 3.0
 - H2
 
-## [REST API documentation](https://github.com/Nikita210787/RestaurantVoting)
+## REST API documentation
+[Documentations on githab ](https://github.com/Nikita210787/RestaurantVoting)
 
 ## For test
+[sawgger-ui](http://localhost:8080/swagger-ui.html)<br>
+[swagger_v3/api-docs](http://localhost:8080/v3/api-docs)
 
-http://localhost:8080/swagger-ui.html
-http://localhost:8080/v3/api-docs
-
-Credentials:
-
+## Credentials:
 ```
 Admin: admin / adminPassword
 User:  user / userPassword

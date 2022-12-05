@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.adminControllers;
+package ru.restaurant_voting.web.adminControllers.adminRestaurantControllerTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.restaurant_voting.util.RestaurantUtil.getTOsIncludeMenu;
-import static ru.restaurant_voting.web.adminControllers.AdminRestaurantController.URL_ADMIN_RESTAURANT_CONTROLLER;
+import static ru.restaurant_voting.web.adminControllers.adminRestaurantController.AdminRestaurantController.URL_ADMIN_RESTAURANT_CONTROLLER;
 import static ru.restaurant_voting.web.testData.RestaurantTestData.*;
 import static ru.restaurant_voting.web.testData.UserTestData.ADMIN_LOGIN;
 
@@ -28,18 +28,6 @@ class AdminRestaurantControllerTest extends AbstractControllerTest {
     @Autowired
     private MenuRepository menuRepository;
 
-    /**
-     * @return All transfer object Restaurants with menu for today
-     */
-    @Test
-    @WithUserDetails(value = ADMIN_LOGIN)
-    void getRestaurantTodayMenu() throws Exception {
-        perform(MockMvcRequestBuilders.get(URL_ADMIN_RESTAURANT_CONTROLLER + "/today"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(RESTAURANT_TO_MATCHER.contentJson(getTOsIncludeMenu(restaurantRepository.getAllRestaurantWithTodayMenu())))
-                .andDo(print());
-    }
 
     /**
      * @return All Restaurants with menu

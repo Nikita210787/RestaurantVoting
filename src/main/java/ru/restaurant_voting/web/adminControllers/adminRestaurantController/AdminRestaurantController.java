@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.adminControllers;
+package ru.restaurant_voting.web.adminControllers.adminRestaurantController;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -8,11 +8,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import ru.restaurant_voting.dto.RestaurantIncludeMenu;
 import ru.restaurant_voting.error.IllegalRequestDataException;
 import ru.restaurant_voting.model.Restaurant;
 import ru.restaurant_voting.repository.RestaurantRepository;
-import ru.restaurant_voting.util.RestaurantUtil;
 import ru.restaurant_voting.util.ValidationUtil;
 
 import javax.validation.Valid;
@@ -27,15 +25,7 @@ public class AdminRestaurantController {
     public static final String URL_ADMIN_RESTAURANT_CONTROLLER = "/v1/api/admin/restaurants";
     RestaurantRepository restaurantRepository;
 
-    /**
-     * @return all restaurant with menu for today
-     */
-    @GetMapping("/today")
-    List<RestaurantIncludeMenu> getAllrestaurantWithMenuForToday() {
-        log.info("get All RestaurantIncludeMenu for today");
-        return RestaurantUtil.getTOsIncludeMenu(restaurantRepository.getAllRestaurantWithTodayMenu());
-    }
-
+    //TODO   //здесь для админа не нужна еда.//опять нет взять Ресторан по id
     /**
      * @return all restaurant
      */
