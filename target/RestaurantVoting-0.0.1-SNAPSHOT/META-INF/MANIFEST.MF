@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Created-By: IntelliJ IDEA
-Built-By: Nik
-Build-Jdk: Oracle OpenJDK version 17.0.1
-Implementation-Title: RestaurantVoting
-Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: org.springframework.boot
-Main-Class: ${start-class}
-
