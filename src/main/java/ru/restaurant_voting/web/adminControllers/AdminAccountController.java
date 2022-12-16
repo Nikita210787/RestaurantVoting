@@ -29,15 +29,6 @@ public class AdminAccountController {
     UserRepository userRepository;
 
     /**
-     * @return authorized admin
-     */
-    @GetMapping(value = "/profile", produces = MediaType.APPLICATION_JSON_VALUE)
-    public User getAccount(@AuthenticationPrincipal AuthUser authUser) {
-        log.info("get {}", authUser);
-        return authUser.getUser();
-    }
-
-    /**
      * @return any authorized user by id
      */
     @GetMapping(value = "/{id}")
@@ -69,7 +60,6 @@ public class AdminAccountController {
         user = userRepository.save(user);
         return ResponseEntity.ok(userRepository.save(user));
     }
-
     /**
      * update any user by id.
      */

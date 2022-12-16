@@ -1,5 +1,6 @@
 package ru.restaurant_voting.repository;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ru.restaurant_voting.model.Menu;
 
@@ -14,6 +15,7 @@ public interface MenuRepository extends BaseEntityRepository<Menu> {
      * @param localDate
      * @return List menu restaurant by id, with date
      */
+    @Query("select m from Menu m where m.restaurant.id = ?1 and m.date = ?2")
     List<Menu> getMenuByRestaurantIdAndDate(int restaurantId, LocalDate localDate);
 
     /**

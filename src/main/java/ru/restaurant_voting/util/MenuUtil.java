@@ -1,6 +1,7 @@
 package ru.restaurant_voting.util;
 
 import lombok.experimental.UtilityClass;
+import ru.restaurant_voting.dto.MenuWithListIdMeal;
 import ru.restaurant_voting.model.Menu;
 
 import java.time.LocalDate;

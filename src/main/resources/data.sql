@@ -27,16 +27,29 @@ VALUES ('Shaurma_na_Kazanskom'),
        ('Shaurma_na_Yaroslavskom5'),
        ('U_Ashota');
 
-INSERT INTO MENU (RESTAURANT_ID, DATE, MEALS)
-VALUES (1, '2022-08-23', 'eggs    85        apple    70        cracker    22        juice    40'),
-       (1, '2022-08-26', 'dish5    340        meall08266    660        meall08267    760        meall08268    530'),
-       (1, CURRENT_DATE, 'mealToDay    75        meallToDay    330        meallToDay    45'),
-       (2, '2022-08-25', 'meal08_25    48        meal08_25    780        meal08_25    88        meall08_254    740'),
-       (2, CURRENT_DATE, 'mealToDay    34        mealToDay    660        mealToDay    760'),
-       (3, '2022-08-25', 'meal08_25    48        meal08_25    79        meal08_25    880'),
-       (3, CURRENT_DATE, 'mealToDay    74        mealToDay    34        mealToDay    66        mealToDay    760');
-
-
+INSERT INTO MENU (RESTAURANT_ID, DATE)
+VALUES (1, '2022-08-23'),
+       (1, '2022-08-26'),
+       (1, CURRENT_DATE),
+       (2, '2022-08-25'),
+       (2, CURRENT_DATE),
+       (3, '2022-08-25'),
+       (3, CURRENT_DATE);
+INSERT INTO MEAL(TITLE,PRICE)
+VALUES ('sssssss','10'),
+       ('aaaaaaa','20'),
+       ('xxxxxxx','30'),
+       ('jjjjjjj','40'),
+       ('zzzzzzz','50'),
+       ('eeeeeee','60'),
+       ('hhhhhhh','60');
+INSERT INTO MENU_MEAL(MENU_ID, MEAL_ID)
+VALUES (1,2 ),
+    (1,1),
+    (1,3),
+    (2,2),
+    (3,5),
+    (4,6);
 INSERT INTO VOTE (RESTAURANT_ID, USER_ID)
 VALUES (2, 1),
        (2, 4),

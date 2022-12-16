@@ -25,22 +25,6 @@ class AdminAccountControllerTest extends AbstractControllerTest {
     UserRepository userRepository;
 
     /**
-     * return authorized admin profile
-     */
-    @Test
-    @WithUserDetails(value = ADMIN_LOGIN)
-    void getAccount() throws Exception {
-        MvcResult result = perform(MockMvcRequestBuilders.get(URL_ADMIN_ACCOUNT + "/profile"))
-                .andExpect(status().isOk())
-                .andDo(print())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.name").value(ADMIN_NAME))
-                .andExpect(jsonPath("$.login").value(ADMIN_LOGIN))
-                .andReturn();
-
-    }
-
-    /**
      * get user by Id
      */
     @Test

@@ -7,13 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
+import org.webjars.NotFoundException;
 import ru.restaurant_voting.error.IllegalRequestDataException;
 import ru.restaurant_voting.model.Restaurant;
 import ru.restaurant_voting.repository.RestaurantRepository;
-import ru.restaurant_voting.util.ValidationUtil;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -25,7 +23,15 @@ public class AdminRestaurantController {
     public static final String URL_ADMIN_RESTAURANT_CONTROLLER = "/v1/api/admin/restaurants";
     RestaurantRepository restaurantRepository;
 
-    //TODO   //здесь для админа не нужна еда.//опять нет взять Ресторан по id
+    /**
+     * @return restaurant By id
+     */
+    @GetMapping("/{id}")
+    ResponseEntity<Restaurant> getRestaurantWithMenuById(@PathVariable int id) {
+        log.info("get Restaurant by id : ", id);
+        return ResponseEntity.ok().body(restaurantRepository.findById(id).orElseThrow(() -> new NotFoundException("Restaurant with such id not Exists")));
+    }
+
     /**
      * @return all restaurant
      */
@@ -38,12 +44,15 @@ public class AdminRestaurantController {
     /**
      * add new restaurant
      */
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public ResponseEntity<Restaurant> createRestaurantWithoutMenu(@Valid @RequestBody Restaurant restaurant) {
-        log.info("Admin add new Restaurant {}", restaurant);
-        ValidationUtil.checkNew(restaurant);
-        Restaurant createdRestaurant = restaurantRepository.save(restaurant);
+    public ResponseEntity<Restaurant> createRestaurantWithoutMenu(@RequestParam String title) {
+        log.info("Admin add new Restaurant {}", title);
+        Restaurant createdRestaurant = new Restaurant(
+                title
+                , List.of()
+                , List.of());
+        restaurantRepository.save(createdRestaurant);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdRestaurant);
     }
 
@@ -60,16 +69,13 @@ public class AdminRestaurantController {
     /**
      * update restaurant by id
      */
-    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateTitle(@RequestBody Restaurant restaurant, @PathVariable int id) {
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Restaurant> updateTitle(@RequestParam String name, @PathVariable int id) {
         log.info("update restaurant id {}", id);
         Restaurant restaurantForUpdate = restaurantRepository.getByID(id).orElseThrow(
                 () -> new IllegalRequestDataException("Restaurant with specified ID does not exist"));
-        if (restaurant.isNew()) restaurantForUpdate.setId(id);
-        else if (restaurant.id() != restaurantForUpdate.getId())
-            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Restaurant id cannot be changed");
-        restaurantForUpdate.setTitle(restaurant.getTitle());
+        restaurantForUpdate.setTitle(name);
         restaurantRepository.save(restaurantForUpdate);
+        return ResponseEntity.ok(restaurantForUpdate);
     }
 }

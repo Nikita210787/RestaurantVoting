@@ -1,19 +1,18 @@
 package ru.restaurant_voting.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.context.annotation.Bean;
-import ru.restaurant_voting.converter.MealsDBConverter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import javax.persistence.*;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +27,8 @@ import java.util.List;
 @AllArgsConstructor
 public class Menu extends BaseEntity {
     @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "restaurant_id", nullable = false/*, updatable = false*/)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "restaurant_id", nullable = false)
     @NotNull
     @Schema(hidden = true)
     private Restaurant restaurant;
@@ -37,12 +36,10 @@ public class Menu extends BaseEntity {
     @Column(nullable = false)
     @NotNull
     private LocalDate date;
-
-
-    @Size(min = 1, max = 20)
-    @NotNull
-    @Convert(converter = MealsDBConverter.class)
-    @Valid
+    @OnDelete(action = OnDeleteAction.CASCADE) // that need for deleting from joined tablet MENU_MEAL
+    @ManyToMany(mappedBy = "menus", fetch = FetchType.EAGER)
+    @Nullable
     private List<Meal> meals = new ArrayList<>();
+
 
 }

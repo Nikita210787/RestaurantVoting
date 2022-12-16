@@ -10,9 +10,10 @@ import java.util.List;
 
 public class RestaurantTestData {
     public static MatcherFactory.Matcher<RestaurantIncludeMenu> RESTAURANT_TO_MATCHER = MatcherFactory.usingRecursiveIgnoreFieldsComparator(RestaurantIncludeMenu.class, "todayMenu.restaurant");
+    public static MatcherFactory.Matcher<RestaurantIncludeMenu> RESTAURANT_INCLUDE_MENU_MATCHER_WITHOUT_MEALS = MatcherFactory.usingRecursiveIgnoreFieldsComparator(RestaurantIncludeMenu.class, "todayMenu.meals.menus","todayMenu.restaurant");
     public static MatcherFactory.Matcher<Restaurant> RESTAURANT_MATCHER = MatcherFactory.usingRecursiveIgnoreFieldsComparator(Restaurant.class, "votes");
     public static MatcherFactory.Matcher<Restaurant> RESTAURANT_MATCHER_WITHOUT_ID_AND_MENU_AND_VOTES = MatcherFactory.usingRecursiveIgnoreFieldsComparator(Restaurant.class, "menus", "id", "votes");
-    public static MatcherFactory.Matcher<Restaurant> RESTAURANT_WITHOUT_MENU_MATCHER = MatcherFactory.usingRecursiveIgnoreFieldsComparator(Restaurant.class, "menu");
+    public static MatcherFactory.Matcher<Restaurant> RESTAURANT_WITHOUT_MENU_MATCHER = MatcherFactory.usingRecursiveIgnoreFieldsComparator(Restaurant.class, "menus.meals.menus", "votes");
 
     public static final int RESTAURANT_ID_1 = 1;
     public static final Restaurant RESTAURANT_TEST = new Restaurant(

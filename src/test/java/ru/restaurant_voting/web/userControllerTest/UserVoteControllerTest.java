@@ -1,4 +1,4 @@
-package ru.restaurant_voting.web.userController;
+package ru.restaurant_voting.web.userControllerTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,6 @@ import java.time.ZonedDateTime;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static ru.restaurant_voting.web.testData.UserTestData.USER_ID;
 import static ru.restaurant_voting.web.testData.VoteTestData.*;
 import static ru.restaurant_voting.web.userControllers.UserVoteController.URL_VOTES;
 

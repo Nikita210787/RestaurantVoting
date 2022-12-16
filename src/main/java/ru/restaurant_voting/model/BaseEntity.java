@@ -1,7 +1,6 @@
 package ru.restaurant_voting.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-//import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.data.domain.Persistable;
@@ -16,7 +15,7 @@ import javax.persistence.*;
 @Access(AccessType.FIELD)
 @NoArgsConstructor
 @AllArgsConstructor
-public class BaseEntity implements Persistable<Integer>{
+public class BaseEntity implements Persistable<Integer> {
 
 
     @ToString.Include
@@ -26,6 +25,7 @@ public class BaseEntity implements Persistable<Integer>{
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
 
     protected Integer id;
+
     public int id() {
         Assert.notNull(id, "Entity must have id");
         return id;

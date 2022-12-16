@@ -14,8 +14,7 @@ import ru.restaurant_voting.web.AbstractControllerTest;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static ru.restaurant_voting.util.RestaurantUtil.getTOsIncludeMenu;
 import static ru.restaurant_voting.web.adminControllers.adminRestaurantController.AdminRestaurantController.URL_ADMIN_RESTAURANT_CONTROLLER;
 import static ru.restaurant_voting.web.testData.RestaurantTestData.*;
@@ -39,7 +38,7 @@ class AdminRestaurantControllerTest extends AbstractControllerTest {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(RESTAURANT_MATCHER.contentJson(restaurantRepository.findAll()))
+                .andExpect(RESTAURANT_WITHOUT_MENU_MATCHER.contentJson(restaurantRepository.findAll()))
                 .andDo(print());
     }
 
@@ -49,13 +48,12 @@ class AdminRestaurantControllerTest extends AbstractControllerTest {
     @Test
     @WithUserDetails(ADMIN_LOGIN)
     void createRestaurantWithoutMenu() throws Exception {
-        perform(MockMvcRequestBuilders.post(URL_ADMIN_RESTAURANT_CONTROLLER)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(JsonUtil.writeValue(RESTAURANT_TEST)))
+        MvcResult res = perform(MockMvcRequestBuilders.post(URL_ADMIN_RESTAURANT_CONTROLLER).param("title","testName"))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.ALL_VALUE))
+                .andExpect(jsonPath("$.title").value("testName"))
+                .andExpect(status().isCreated())
                 .andDo(print())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(RESTAURANT_MATCHER_WITHOUT_ID_AND_MENU_AND_VOTES.contentJson(RESTAURANT_TEST))
-                .andExpect(status().isCreated());
+                .andReturn();
     }
 
     /**
@@ -80,11 +78,12 @@ class AdminRestaurantControllerTest extends AbstractControllerTest {
         Restaurant newNamdeRestauran = restaurantRepository.findById(RESTAURANT_ID_1).orElseThrow(null);
         newNamdeRestauran.setTitle("newNAme");
         MvcResult res = perform(MockMvcRequestBuilders.put(URL_ADMIN_RESTAURANT_CONTROLLER + "/" + RESTAURANT_ID_1)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(JsonUtil.writeValue(newNamdeRestauran)))
+                .param("name","newNAme"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isNoContent())
                 .andReturn();
         RESTAURANT_MATCHER_WITHOUT_ID_AND_MENU_AND_VOTES.assertMatch(restaurantRepository.getByID(RESTAURANT_ID_1).get(), newNamdeRestauran);
     }
+
 }

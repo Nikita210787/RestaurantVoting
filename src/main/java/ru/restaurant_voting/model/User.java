@@ -48,7 +48,7 @@ public class User extends BaseEntity implements Serializable {
     @JoinColumn(name = "id")
     private Set<Role> roles;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private List<Vote> votes = new ArrayList<>();
